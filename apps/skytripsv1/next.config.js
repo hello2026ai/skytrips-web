@@ -21,8 +21,8 @@ const nextConfig = {
   reactStrictMode: true,
   // Configure trailing slash behavior
   trailingSlash: false,
-  // Configure build directory (optional, default: .next)
-  // distDir: '.next',
+  // Configure build directory to root .next for Vercel compatibility
+  distDir: '../../.next',
   // Set environment variables (optional)
   env: {
     SITE_URL: 'https://skytrips.com.au',
