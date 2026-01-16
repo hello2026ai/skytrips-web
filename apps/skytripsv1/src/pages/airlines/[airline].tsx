@@ -469,47 +469,33 @@ export async function getStaticProps({
   let routeData = null;
   try {
     const fullKey = `airlines/${params.airline}`;
-    // URL encode the key to handle forward slashes
     const encodedKey = encodeURIComponent(fullKey);
-    const apiUrl = `${process.env.NEXT_PUBLIC_REST_API}/route/page/key/${encodedKey}`;
+    const apiBaseUrl = process.env.NEXT_PUBLIC_REST_API || 'https://api.skytrips.com.au';
+    const apiUrl = `${apiBaseUrl}/route/page/key/${encodedKey}`;
 
     const response = await fetch(apiUrl);
 
     if (response.ok) {
-      const result = await response.json();
-      console.log('API response data:', JSON.stringify(result, null, 2));
-      const data = result.data || result;
-
-      // Accept API data if it has airline information, regardless of exact key match
-      // This allows backend-created pages to work even if key format varies slightly
-      if (data && data.airline) {
-        routeData = data;
-        console.log('✅ Valid route data found from API');
+      const data = await response.json();
+      if (data && data.data && data.data.airline) {
+        routeData = data.data;
       } else if (data && data.key) {
         // Fallback: accept data with matching key even without airline object
         const dataKeyAfterSlash = data.key.split('/').pop();
         const fullKeyAfterSlash = fullKey.split('/').pop();
+
         if (dataKeyAfterSlash === fullKeyAfterSlash) {
           routeData = data;
-          console.log('✅ Valid route data found by key match');
-        } else {
-          console.log(
-            '❌ Key mismatch - API key:',
-            data.key,
-            'Expected:',
-            fullKey
-          );
         }
-      } else {
-        console.log('❌ No airline data in API response');
       }
     } else {
-      console.log('API response not OK:', response.status);
-      const errorText = await response.text();
-      console.log('Error response:', errorText);
+      // Log as warning instead of full error log to avoid build noise for 404s
+      if (response.status !== 404) {
+        console.warn(`API response not OK for ${fullKey}:`, response.status);
+      }
     }
   } catch (error) {
-    console.error('Error fetching route data in getStaticProps:', error);
+    console.warn(`Error fetching route data for ${params.airline}:`, error);
   }
 
   // Only return 404 if we have neither static content NOR valid API data with airline info
