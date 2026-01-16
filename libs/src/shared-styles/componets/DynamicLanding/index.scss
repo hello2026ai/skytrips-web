@@ -1,0 +1,120 @@
+.dynamic-landing-section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  h1 {
+    font-family: $font-family;
+    font-size: $h2-size;
+    font-weight: 800;
+    line-height: $h2-line-height;
+    color: $on-container;
+  }
+  p {
+    font-family: $font-family;
+    font-size: $b5-size;
+    font-weight: $font-weight-regular;
+    line-height: 26px;
+    color: $on-container;
+  }
+}
+
+@media (max-width: 1399px) {
+  .dynamic-landing-section {
+    .melbourne-search-adjust {
+      margin-top: 3.5rem;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .dynamic-landing-section {
+    margin-bottom: 7rem;
+
+    .home-search-wrapper {
+      top: 65% !important;
+    }
+    .dynamic-page-faq-container {
+      margin-top: 10rem;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .dynamic-landing-section {
+    // margin-bottom: 45rem;
+
+    .home-search-wrapper {
+      top: 70% !important;
+    }
+    .dynamic-page-faq-container {
+      margin-top: 45rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dynamic-landing-section {
+    // margin-bottom: 53rem;
+
+    .home-search-wrapper {
+      top: 92% !important;
+    }
+    .dynamic-page-faq-container {
+      margin-top: 53rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .dynamic-landing-section {
+    margin-top: 1rem;
+    // margin-bottom: 56rem;
+    .heading-for-mobile {
+      text-align: center;
+      padding-top: unset !important;
+
+      h1 {
+        font-size: $h5-size;
+        margin: auto;
+        line-height: unset;
+      }
+      p {
+        margin: auto;
+        font-size: $b5-size;
+        margin-top: unset !important;
+      }
+    }
+
+    .img-for-mobile {
+      display: none !important;
+    }
+    .home-search-wrapper {
+      top: 120% !important;
+    }
+    .dynamic-page-faq-container {
+      margin-top: 58rem;
+    }
+    .melbourne-faq-adjust {
+      margin-top: 58rem;
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .dynamic-landing-section {
+    .dynamic-page-faq-container {
+      margin-top: 55rem;
+    }
+    .melbourne-faq-adjust {
+      margin-top: 58rem;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .dynamic-landing-section {
+    .dynamic-page-faq-container {
+      margin-top: 57rem;
+    }
+  }
+}

@@ -1,0 +1,929 @@
+//SKYTRIPS design system
+//skytrips font weight
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$font-family: Poppins, sans-serif;
+
+// Color System Variables
+// Primary Colors
+$primary: #0c0073;
+$primary-light: #5143d9;
+$primary-bright: #0229ef;
+$primary-dark: #0a053a;
+
+// Secondary Colors
+$secondary: #f7941e;
+$secondary-light: #f9b55d;
+$secondary-bright: #f7941e;
+$secondary-dark: #d67a0c;
+$secondary-dark-variant: #c2410c;
+
+// Neutral Colors
+$neutral-white: #ffffff;
+$neutral-off-white: #f7f7f7;
+$neutral-light: #eeeeee;
+$neutral-medium: #d9d9d9;
+$neutral-dark: #737373;
+$neutral-black: #0c0c0c;
+
+// Status Colors
+$status-success: #12e848;
+$status-error: #f43434;
+
+// Color Map
+$color-map: (
+  'primary': $primary,
+  'onPrimary': $neutral-white,
+  'primaryVariant': $primary-bright,
+  'onPrimaryVariant': $primary-dark,
+  'secondary': $secondary,
+  'onSecondary': $neutral-white,
+  'secondaryVariant': $secondary-dark,
+  'onSecondaryVariant': $neutral-off-white,
+  'background': $neutral-off-white,
+  'onBackground': $neutral-black,
+  'container': $neutral-white,
+  'onContainer': $neutral-black,
+);
+
+// Color Classes
+// Primary Classes
+.bg-primary {
+  background-color: $primary;
+}
+.bg-primary-dark {
+  background-color: $primary-dark;
+}
+.text-primary {
+  color: $primary;
+}
+.bg-primary-variant {
+  background-color: $primary-bright;
+}
+.text-primary-on {
+  color: $neutral-white;
+}
+
+.text-secondary-dark-variant {
+  color: $secondary-dark-variant;
+}
+// .text-primary-on-variant {
+//   color: $primary;
+// }
+.text-primary-bright-variant {
+  color: $primary-light;
+}
+.bg-primary-bright-variant {
+  background-color: $primary-light;
+}
+.text-neutral-dark {
+  color: $neutral-dark;
+}
+.bg-dark {
+  background-color: $neutral-medium;
+}
+.bg-dark-variant {
+  background-color: $neutral-dark;
+}
+
+// Secondary Classes
+.bg-secondary {
+  background-color: $secondary;
+}
+.text-secondary {
+  color: $secondary;
+}
+.bg-secondary-variant {
+  background-color: $secondary-dark;
+}
+.text-secondary-on {
+  color: $neutral-white;
+}
+.text-secondary-on-variant {
+  color: $neutral-off-white;
+}
+
+// Background Classes
+.bg-background {
+  background-color: $neutral-off-white;
+}
+.text-background-on {
+  color: $neutral-black;
+}
+
+// Container Classes
+.bg-container {
+  background-color: $neutral-white;
+}
+
+// Success Classes
+.bg-success {
+  background-color: $status-success;
+}
+.text-success {
+  color: $status-success;
+}
+.text-success-on {
+  color: $neutral-black;
+}
+
+// Error Classes
+.bg-error {
+  background-color: $status-error;
+}
+.text-error {
+  color: $status-error;
+}
+.text-error-on {
+  color: $neutral-black;
+}
+.text-secondary-bright {
+  color: $secondary-bright;
+}
+
+.bg-secondary-light {
+  background-color: $secondary-light;
+}
+.text-secondary-light {
+  color: $secondary-dark;
+}
+
+// Border Classes
+.border-1 {
+  border-color: $neutral-light;
+}
+.border-2 {
+  border-color: $neutral-medium;
+}
+.border-3 {
+  border-color: $neutral-dark;
+}
+
+$base-padding: 0.75rem !default;
+$base-margin: 0.75rem !default;
+
+// borders
+$base-border-thickness: 1px !default;
+$base-border-radius: 20px !default;
+
+// box-shadow
+$base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1) !default;
+
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
+
+// Breakpoint mixin
+@mixin breakpoint($size) {
+  @if $size == sm {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  } @else if $size == md {
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+// 1. First, define the typography scale system
+
+// 2. Helper functions to get values
+
+$headlines: (
+  h1: (
+    mobile: (
+      size: 40px,
+      // line-height: 48px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 52px,
+      // line-height: 64px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 64px,
+      // line-height: 72px,
+      weight: $font-weight-bold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+  h2: (
+    mobile: (
+      size: 32px,
+      // line-height: 40px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 40px,
+      // line-height: 52px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 48px,
+      // line-height: 64px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+  h3: (
+    mobile: (
+      size: 24px,
+      // line-height: 32px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 28px,
+      // line-height: 40px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 32px,
+      // line-height: 48px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+  h4: (
+    mobile: (
+      size: 20px,
+      // line-height: 28px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 22px,
+      // line-height: 32px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 24px,
+      // line-height: 36px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+  h5: (
+    mobile: (
+      size: 16px,
+      // line-height: 24px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 18px,
+      // line-height: 28px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 20px,
+      // line-height: 30px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+);
+
+$titles: (
+  t1: (
+    mobile: (
+      size: 20px,
+      // line-height: 36px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 22px,
+      // line-height: 42px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 24px,
+      // line-height: 48px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+  t2: (
+    mobile: (
+      size: 19px,
+      // line-height: 36px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 19px,
+      // line-height: 42px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 20px,
+      // line-height: 48px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+  t3: (
+    mobile: (
+      size: 17px,
+      // line-height: 36px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 17px,
+      // line-height: 42px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 18px,
+      // line-height: 35px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+  t4: (
+    mobile: (
+      size: 16px,
+      // line-height: 36px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 16px,
+      // line-height: 42px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 16px,
+      // line-height: 40px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+);
+
+$body: (
+  b1: (
+    mobile: (
+      size: 15px,
+      // line-height: 20px,
+      weight: $font-weight-regular,
+      // Regular
+      font-family: $font-family,
+      color: $neutral-white,
+    ),
+    tablet: (
+      size: 15px,
+      // line-height: 22px,
+      weight: $font-weight-regular,
+      font-family: $font-family,
+      color: $neutral-white,
+    ),
+    desktop: (
+      size: 16px,
+      // line-height: 24px,
+      weight: $font-weight-regular,
+      font-family: $font-family,
+      color: $neutral-white,
+    ),
+  ),
+  b2: (
+    mobile: (
+      size: 15px,
+      // line-height: 18px,
+      weight: $font-weight-bold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 14px,
+      // line-height: 20px,
+      weight: $font-weight-bold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 14px,
+      // line-height: 22px,
+      weight: $font-weight-bold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+  b3: (
+    mobile: (
+      size: 17px,
+      // line-height: 20px,
+      weight: $font-weight-semibold,
+      // Semi-bold
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 17px,
+      // line-height: 21px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 18px,
+      // line-height: 22px,
+      weight: $font-weight-semibold,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+  b4: (
+    mobile: (
+      size: 17px,
+      // line-height: 20px,
+      weight: $font-weight-regular,
+      font-family: $font-family,
+      color: $neutral-black,
+    ),
+    tablet: (
+      size: 17px,
+      // line-height: 21px,
+      weight: $font-weight-regular,
+      font-family: $font-family,
+      color: $neutral-black,
+    ),
+    desktop: (
+      size: 18px,
+      // line-height: 22px,
+      weight: $font-weight-regular,
+      font-family: $font-family,
+      color: $neutral-black,
+    ),
+  ),
+  b5: (
+    mobile: (
+      size: 15px,
+      // line-height: 20px,
+      weight: $font-weight-regular,
+      font-family: $font-family,
+      // color: $neutral-black,
+    ),
+    tablet: (
+      size: 15px,
+      // line-height: 21px,
+      weight: $font-weight-regular,
+      font-family: $font-family,
+      // color: $neutral-black,
+    ),
+    desktop: (
+      size: 16px,
+      // line-height: 22px,
+      weight: $font-weight-regular,
+      font-family: $font-family,
+      // color: $neutral-black,
+    ),
+  ),
+);
+
+// Labels Typography System
+$labels: (
+  l1: (
+    mobile: (
+      size: 14px,
+      // line-height: 20px,
+      weight: $font-weight-medium,
+      // Medium
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 16px,
+      // line-height: 22px,
+      weight: $font-weight-medium,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 16px,
+      // line-height: 24px,
+      weight: $font-weight-medium,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+  l2: (
+    mobile: (
+      size: 12px,
+      // line-height: 18px,
+      weight: $font-weight-medium,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 14px,
+      // line-height: 20px,
+      weight: $font-weight-medium,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 14px,
+      // line-height: 22px,
+      weight: $font-weight-medium,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+  l3: (
+    mobile: (
+      size: 12px,
+      // line-height: 18px,
+      weight: $font-weight-regular,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    tablet: (
+      size: 12px,
+      // line-height: 20px,
+      weight: $font-weight-regular,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+    desktop: (
+      size: 12px,
+      // line-height: 22px,
+      weight: $font-weight-regular,
+      font-family: $font-family,
+      // color: $neutral-white,
+    ),
+  ),
+);
+
+// Form Fields System
+$form-fields: (
+  default: (
+    height: 40px,
+    border-radius: 4px,
+    border-width: 1px,
+    border-color: $neutral-medium,
+    bg-color: $neutral-white,
+    text-color: $neutral-black,
+    placeholder-color: $neutral-dark,
+    padding-x: 12px,
+    padding-y: 8px,
+    font-size: 14px,
+    font-weight: $font-weight-regular,
+    line-height: 20px,
+    focus-ring-color: $primary-light,
+    focus-ring-width: 1px,
+  ),
+  error: (
+    border-color: $status-error,
+    focus-ring-color: $status-error,
+  ),
+  disabled: (
+    bg-color: $neutral-light,
+    opacity: 0.5,
+  ),
+);
+
+@mixin headline($level) {
+  $settings: map-get($headlines, $level);
+
+  // Mobile (default)
+  $mobile: map-get($settings, mobile);
+  font-size: map-get($mobile, size) !important;
+  line-height: map-get($mobile, line-height) !important;
+  font-weight: map-get($mobile, weight) !important;
+  font-family: $font-family !important;
+
+  color: map-get($mobile, color) !important;
+
+  // Tablet
+  @include breakpoint(md) {
+    $tablet: map-get($settings, tablet);
+    font-size: map-get($tablet, size) !important;
+    line-height: map-get($tablet, line-height) !important;
+    font-weight: map-get($tablet, weight) !important;
+    font-family: $font-family !important;
+
+    color: map-get($tablet, color) !important;
+  }
+
+  // Desktop
+  @include breakpoint(lg) {
+    $desktop: map-get($settings, desktop);
+    font-size: map-get($desktop, size) !important;
+    line-height: map-get($desktop, line-height) !important;
+    font-weight: map-get($desktop, weight) !important;
+    font-family: $font-family !important;
+
+    color: map-get($desktop, color) !important;
+  }
+}
+
+@mixin title($level) {
+  $settings: map-get($titles, $level);
+
+  // Mobile (default)
+  $mobile: map-get($settings, mobile);
+  font-size: map-get($mobile, size);
+  line-height: map-get($mobile, line-height);
+  font-weight: map-get($mobile, weight);
+  font-family: $font-family;
+  color: map-get($mobile, color);
+
+  // Tablet
+  @include breakpoint(md) {
+    $tablet: map-get($settings, tablet);
+    font-size: map-get($tablet, size);
+    line-height: map-get($tablet, line-height);
+    font-weight: map-get($tablet, weight);
+    font-family: $font-family;
+
+    color: map-get($tablet, color);
+  }
+
+  // Desktop
+  @include breakpoint(lg) {
+    $desktop: map-get($settings, desktop);
+    font-size: map-get($desktop, size);
+    line-height: map-get($desktop, line-height);
+    font-weight: map-get($desktop, weight);
+    font-family: $font-family;
+
+    color: map-get($desktop, color);
+  }
+}
+
+// Body Mixin
+@mixin body($level) {
+  $settings: map-get($body, $level);
+
+  // Mobile (default)
+  $mobile: map-get($settings, mobile);
+  font-size: map-get($mobile, size);
+  line-height: map-get($mobile, line-height);
+  font-weight: map-get($mobile, weight);
+  font-family: $font-family;
+
+  color: map-get($mobile, color);
+
+  // Tablet
+  @include breakpoint(md) {
+    $tablet: map-get($settings, tablet);
+    font-size: map-get($tablet, size);
+    line-height: map-get($tablet, line-height);
+    font-weight: map-get($tablet, weight);
+    font-family: $font-family;
+
+    color: map-get($tablet, color);
+  }
+
+  // Desktop
+  @include breakpoint(lg) {
+    $desktop: map-get($settings, desktop);
+    font-size: map-get($desktop, size);
+    line-height: map-get($desktop, line-height);
+    font-weight: map-get($desktop, weight);
+    font-family: $font-family;
+
+    color: map-get($desktop, color);
+  }
+}
+
+// Label Mixin
+@mixin label($level) {
+  $settings: map-get($labels, $level);
+  // Mobile (default)
+  $mobile: map-get($settings, mobile);
+  font-size: map-get($mobile, size);
+  line-height: map-get($mobile, line-height);
+  font-weight: map-get($mobile, weight);
+  font-family: $font-family;
+
+  color: map-get($mobile, color);
+
+  // Tablet
+  @include breakpoint(md) {
+    $tablet: map-get($settings, tablet);
+    font-size: map-get($tablet, size);
+    line-height: map-get($tablet, line-height);
+    font-weight: map-get($tablet, weight);
+    font-family: $font-family;
+
+    color: map-get($tablet, color);
+  }
+
+  // Desktop
+  @include breakpoint(lg) {
+    $desktop: map-get($settings, desktop);
+    font-size: map-get($desktop, size);
+    line-height: map-get($desktop, line-height);
+    font-weight: map-get($desktop, weight);
+    font-family: $font-family;
+
+    color: map-get($desktop, color);
+  }
+}
+
+// Generate Headline Classes
+@each $level, $settings in $headlines {
+  .#{$level} {
+    @include headline($level);
+  }
+}
+@each $level, $settings in $titles {
+  .title-#{$level} {
+    @include title($level);
+  }
+}
+
+// Generate Body Classes
+@each $level, $settings in $body {
+  .body-#{$level} {
+    @include body($level);
+  }
+}
+
+// Generate Label Classes
+@each $level, $settings in $labels {
+  .label-#{$level} {
+    @include label($level);
+  }
+}
+
+// Form Field Mixin
+@mixin form-field($state: 'default') {
+  $default: map-get($form-fields, default);
+
+  height: map-get($default, height);
+  border-radius: map-get($default, border-radius);
+  border-width: map-get($default, border-width);
+  border-style: solid;
+  border-color: map-get($default, border-color);
+  background-color: map-get($default, bg-color);
+  color: map-get($default, text-color);
+  padding: map-get($default, padding-y) map-get($default, padding-x);
+  font-size: map-get($default, font-size);
+  font-weight: map-get($default, font-weight);
+  line-height: map-get($default, line-height);
+  font-family: $font-family;
+
+  &::placeholder {
+    color: map-get($default, placeholder-color);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: map-get($default, focus-ring-color);
+    box-shadow: 0 0 0 map-get($default, focus-ring-width)
+      rgba(map-get($default, focus-ring-color), 0.2);
+  }
+
+  @if $state == 'error' {
+    $error: map-get($form-fields, error);
+    border-color: map-get($error, border-color);
+
+    &:focus {
+      border-color: map-get($error, focus-ring-color);
+      box-shadow: 0
+        0
+        0
+        map-get($default, focus-ring-width)
+        rgba(map-get($error, focus-ring-color), 0.2);
+    }
+  }
+
+  @if $state == 'disabled' {
+    $disabled: map-get($form-fields, disabled);
+    background-color: map-get($disabled, bg-color);
+    opacity: map-get($disabled, opacity);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Generate Form Field Classes
+.form-field {
+  @include form-field('default');
+}
+
+.form-field-error {
+  @include form-field('error');
+}
+
+.form-field-disabled {
+  @include form-field('disabled');
+}
+
+.primary-btn {
+  background-color: $primary;
+  color: $neutral-white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  font-family: $font-family;
+
+  &:hover {
+    background-color: $primary-bright;
+    color: $neutral-white;
+  }
+
+  &:focus {
+    background-color: $primary;
+    color: $neutral-white;
+    box-shadow: 0 0 0 2px rgba($primary, 0.3);
+  }
+
+  &:active {
+    background-color: $primary-dark;
+    color: $neutral-white;
+  }
+
+  &:disabled {
+    background-color: $neutral-medium;
+    color: $neutral-white;
+    cursor: not-allowed;
+  }
+}
+.container {
+  padding-left: 100px;
+  padding-right: 100px;
+  @media (max-width: 768px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.banner-sub-title {
+  font-size: 24px;
+  font-weight: $font-weight-regular;
+  line-height: 32px;
+  color: $neutral-white;
+  margin-top: 1rem;
+  // font-family: 'inter';
+  font-family: $font-family;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: $font-weight-regular;
+  font-family: $font-family;
+}

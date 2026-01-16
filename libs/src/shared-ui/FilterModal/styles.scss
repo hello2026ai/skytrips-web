@@ -1,0 +1,49 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040; /* Ensure it's below the modal */
+}
+
+.filter-modal-container {
+  .filter-modal {
+    margin-top: 8rem;
+  }
+}
+@media (max-width: 768px) {
+  .filter-modal-container {
+    .modal-header {
+      position: relative;
+
+      .btn-close {
+        position: absolute;
+        left: 1.2rem;
+        top: 1.5rem;
+      }
+      .modal-title {
+        margin-left: 2.5rem;
+      }
+    }
+    .accordion {
+      padding: unset !important;
+    }
+    .accordion-button {
+      padding: 24px 20px !important;
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .filter-modal-container {
+    .filter-modal {
+      margin: unset !important;
+      margin-top: 2.5rem !important;
+    }
+    .modal-body {
+      border-radius: 12px !important;
+    }
+  }
+}

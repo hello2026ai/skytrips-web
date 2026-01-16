@@ -1,0 +1,16 @@
+# Allow all crawlers
+User-agent: *
+Disallow: /flights-results
+Disallow: /book
+Disallow: /_app
+Disallow: /_next/
+Disallow: /confirmation
+Disallow: /itinerary
+Disallow: /airlines/[airline]
+Disallow: /flight-result-backup
+Disallow: /flight-result-backup/
+Disallow: /homepage
+
+
+
+Sitemap: https://skytrips.com.au/sitemap.xml

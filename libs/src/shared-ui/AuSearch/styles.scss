@@ -1,0 +1,406 @@
+.search-section-au {
+  li {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.2px;
+  }
+
+  .add-city {
+    font-size: 12px;
+    padding: 6px;
+    font-weight: 400;
+  }
+  .add-multi-city {
+    width: 83%;
+  }
+
+  .right-left-arrow {
+    margin-bottom: 4px;
+  }
+
+  .arrow-placing {
+    top: 35.7%;
+  }
+
+  // .flex-row-reverse {
+  //   margin-right: -11.5rem;
+  // }
+  // .economy-class {
+  //   float: right;
+  // }
+}
+.css-qbdosj-Input {
+  height: 30px !important;
+  margin: unset !important;
+}
+.css-qbdosj-Input:focus {
+  height: 30px !important;
+  margin: unset !important;
+}
+
+.css-3alx1z-control {
+  min-height: 100px;
+}
+
+.flight-form {
+  .nav {
+    &.nav-pills {
+      @media (max-width: 600px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+.css-1jqq78o-placeholder {
+  padding: 6px !important;
+}
+.search_to_datepicker {
+  .date-picker-contianer {
+    .flatpickr-input {
+      padding: 13px !important;
+    }
+  }
+}
+.btn-flip-icon {
+  z-index: 1;
+}
+
+.search-main-component {
+  padding-bottom: 3rem;
+  // height: 300px;
+  min-height: 255px;
+
+  .row > * {
+    margin-top: 1.2rem;
+  }
+  .mt-4 {
+    margin-top: 4px !important;
+  }
+}
+
+.start {
+  border: 1px solid #9d9d9d !important;
+}
+
+.end {
+  border: 1px solid #9d9d9d !important;
+}
+
+.rounded-middle {
+  border-top: 1px solid #9d9d9d !important;
+  border-bottom: 1px solid #9d9d9d !important;
+}
+
+.quick-search-option {
+  font-size: 14px;
+  background-color: #eaeaea;
+  color: #6b6b70;
+  // border: unset;
+  padding: 4px, 6px !important;
+  border-radius: 8px !important;
+  margin-top: 1rem;
+}
+.destination-for-mobile {
+  display: none;
+  h1 {
+    font-size: x-large;
+    color: #313131;
+  }
+}
+.search-close-btn {
+  display: none;
+}
+.search-main-component-mobile-au {
+  display: none;
+}
+
+.mobile-search-icon {
+  // margin-left: 0.5rem;
+  float: right;
+}
+.check-availability-btn {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+
+// .form-control-bg-light {
+//   background-color: #9d9d9d !important;
+// }
+
+.class-select-conatiner-au {
+  border: unset !important;
+  .css-1le7lbb-control {
+    background-color: #eaeaea !important;
+    // :focus {
+    //   background-color: #eaeaea !important;
+    // }
+  }
+
+  .css-3utyvw-control {
+    background-color: #eaeaea !important;
+  }
+  .economy-class {
+    .css-1xc3v61-indicatorContainer {
+      color: black !important;
+    }
+  }
+
+  .css-105z4c6-control {
+    border-color: white !important;
+    min-height: 65px !important;
+  }
+  .css-l98bjd-control {
+    min-height: 65px !important;
+  }
+  // .css-1xc3v61-indicatorContainer {
+  //   color: #9d9d9d !important;
+  // }
+}
+
+@media (max-width: 1700px) and (min-width: 1600px) {
+  .main_heading_au {
+    margin-left: 12rem !important;
+  }
+}
+
+@media (max-width: 1900px) and (min-width: 1700px) {
+  .main_heading_au {
+    margin-left: 20rem !important;
+  }
+}
+
+@media (max-width: 2200px) and (min-width: 1900px) {
+  .main_heading_au {
+    margin-left: 25rem !important;
+  }
+}
+
+@media (max-width: 2500px) and (min-width: 2200px) {
+  .main_heading_au {
+    margin-left: 40rem !important;
+  }
+}
+
+@media (max-width: 2700px) and (min-width: 2500px) {
+  .main_heading_au {
+    margin-left: 45rem !important;
+  }
+}
+
+@media (max-width: 1300px) and (min-width: 1100px) {
+  .au-search {
+    top: 22rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .search-section {
+    margin-left: 1rem !important;
+  }
+  .side-design {
+    left: 12px !important;
+  }
+  .add-city {
+    // padding: 2px !important;
+    // width: 90%;
+  }
+  .add-multi-city {
+    width: 83%;
+  }
+}
+
+@media (max-width: 991px) {
+  .search-main-component {
+    // padding-bottom: unset;
+    // // height: 300px;
+    // height: unset;
+
+    // .row > * {
+    //   margin-top: 1.2rem;
+    // }
+    // .mt-4 {
+    //   margin-top: 4px !important;
+    // }
+  }
+  .search-section {
+    margin-left: 2rem !important;
+  }
+  .side-design {
+    left: 0px !important;
+  }
+  .btn-flip-icon {
+    top: 93% !important;
+    left: 45%;
+    transform: rotate(90deg);
+  }
+  .quick-search-option {
+    margin-bottom: 0.5rem;
+  }
+  // .arrow-placing {
+  //   top: 91.7% !important;
+  // }
+}
+@media (max-width: 820px) {
+  // .check-availability-btn {
+  //   width: 105% !important;
+  // }
+  .add-multi-city {
+    width: 100% !important;
+  }
+  .economy-class {
+    // float: unset !important;
+  }
+  .au-search {
+    top: 5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .destination-for-mobile {
+    display: block;
+    color: #313131;
+  }
+  .search-close-btn {
+    display: block;
+    margin-bottom: 2rem;
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+  }
+  .search-main-component {
+    display: none;
+  }
+  .search-main-component-mobile-au {
+    display: block;
+  }
+  section {
+    padding-bottom: unset !important;
+  }
+  // .check-availability-btn {
+  //   width: 105% !important;
+  // }
+}
+
+@media (max-width: 431px) {
+  .search-section {
+    margin-left: 0.3rem !important;
+  }
+  .btn-flip-icon {
+    top: 78%;
+    left: 45%;
+    transform: rotate(0deg);
+  }
+  .search-close-btn {
+    margin-bottom: 2rem;
+  }
+
+  .nav-pills-dark .nav-link {
+    font-size: 14px !important;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+  }
+
+  // .check-availability-btn {
+  //   width: 109% !important;
+  // }
+
+  .trip-option-nav {
+    margin-top: -1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-flip-icon {
+    top: 78% !important;
+  }
+
+  .au-search {
+    top: unset !important;
+  }
+
+  .search-main-component-mobile-au {
+    margin-top: 1rem !important;
+    border-radius: 24px !important;
+  }
+  .search-section-au {
+    .side-design {
+      display: none !important;
+    }
+  }
+}
+@media (max-width: 395px) {
+  .nav-pills .nav-link {
+    padding: unset !important;
+    padding: 8px !important;
+  }
+}
+@media (max-width: 342px) {
+  .nav-pills .nav-link {
+    padding: 4px !important;
+  }
+}
+@media (max-width: 320px) {
+  .search-section {
+    margin-left: 0rem !important;
+    margin-right: 0.2rem !important;
+  }
+}
+
+//au landing
+
+@media (max-width: 1300px) {
+  // .search-section-au {
+
+  .date-section {
+    width: 80%;
+  }
+
+  // .flex-row-reverse {
+  //   // margin-right: unset;
+  // }
+  // }
+}
+
+@media (max-width: 820px) {
+  // .search-section-au {
+
+  .date-section {
+    width: 50%;
+  }
+}
+
+@media (max-width: 350px) {
+  // .search-section-au {
+
+  .date-section {
+    width: 100% !important;
+  }
+}
+.au-side-design {
+  display: none;
+}
+
+.au-search {
+  border-radius: 24px;
+  &-details {
+    padding: 8px 10px !important;
+
+    .search-label {
+      color: #000000;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: 0.2px;
+    }
+  }
+}
+
+.au-search-details {
+  background-color: #eaeaea;
+}

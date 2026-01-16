@@ -1,0 +1,168 @@
+.text-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  // background-color: #e3e4ef;
+  border-radius: 8px;
+  color: #313131;
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  .was-validated .form-control:invalid,
+  .form-control.is-invalid {
+    background-image: none;
+    box-shadow: none;
+  }
+
+  .text-input-icon {
+    position: absolute;
+    right: 8px;
+    // top: 8px;
+  }
+  .text-input-icon-auth {
+    position: absolute;
+    right: 8px;
+  }
+  .contact-input {
+    background-color: unset !important;
+    border: 1px solid #eeeeee !important;
+    border-radius: 4px !important;
+    padding: 20px 12px !important;
+  }
+}
+
+.book-form-input {
+  background-color: #ffffff !important;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  color: #707070;
+  padding: 20px !important;
+}
+
+.text-input-container-contact {
+  position: relative;
+  display: flex;
+  align-items: center;
+  // background-color: #e3e4ef;
+  border-radius: 8px;
+  color: #313131;
+}
+// .text-input-container input {
+//   background-color: #fff !important;
+//   // border: unset;
+// }
+
+.auth-container-content-form {
+  .text-input-container .form-control {
+    background-color: #e3e4ef;
+  }
+  .form-label {
+    color: #151515 !important;
+  }
+}
+
+.book-form-input {
+  background-color: #ffffff !important;
+}
+
+.default-input-design {
+  background-color: #ffffff !important;
+}
+.booking-form-input {
+  background-color: #ffffff !important;
+  border: unset;
+  height: 2.3rem;
+}
+.text-input-container-booking {
+  position: relative;
+  display: flex;
+  align-items: center;
+  // background-color: #e3e4ef;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  color: #707070;
+  padding: 2px;
+  // height: 2.3rem;
+}
+
+.payment-form-input {
+  background-color: #ffffff !important;
+  border-radius: 4px;
+  padding: 20px 8px;
+}
+.authentication-input {
+  padding: 10px 12px 10px 12px !important;
+  border-radius: 8px !important;
+  border: none;
+  height: 48px !important;
+  width: 343px;
+}
+
+.nepal-icon {
+  padding-left: 8px;
+  margin-right: 10px;
+  height: 20px;
+}
+
+.phone-code-select {
+  max-width: 18%;
+  border: unset;
+  background-color: #e3e4ef;
+  outline: none;
+}
+.send-code-btn {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 21px;
+  height: 48px;
+  margin-bottom: unset;
+  border-top-left-radius: unset;
+  border-bottom-left-radius: unset;
+  color: #fcfcfc;
+}
+
+.resend-btn {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  color: #000c73;
+  cursor: pointer;
+}
+
+.resend-btn-disabled {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  color: #6b6b70;
+  // cursor: disabled;
+}
+
+@media (max-width: 1024px) {
+  .text-input-container .text-input-icon {
+    right: 50px;
+  }
+}
+@media (max-width: 1024px) {
+  .text-input-container .text-input-icon-auth {
+    right: 33px;
+  }
+}
+
+@media (max-width: 375px) {
+  .text-input-container {
+    input {
+      overflow-y: hidden;
+    }
+  }
+}

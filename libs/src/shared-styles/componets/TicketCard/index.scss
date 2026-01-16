@@ -1,0 +1,300 @@
+.ticket-container {
+  margin-bottom: 0.5rem;
+  h6 {
+    font-family: $font-family !important;
+  }
+
+  &-airlines {
+    overflow: auto;
+    white-space: nowrap;
+    // gap: 40px;
+  }
+  .custom-book-button {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    padding: 10px !important;
+    width: 92%;
+    border: none;
+    border-radius: 4px;
+    background-color: $on-primary-variant;
+    color: $container;
+  }
+
+  .custom-book-button-oneway {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0px 6px;
+    // width: 92% ;
+    // margin-left: 4px;
+    height: 2.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: $on-primary-variant;
+    color: $container;
+    order: 1;
+  }
+  .custom-flight-button {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 8px;
+    width: 92%;
+
+    border: 1px solid $on-primary-variant !important;
+    border-radius: 4px;
+    // background-color: $container;
+    // color: $on-primary-variant;
+    background-color: $sk-container !important;
+
+    // background-color: #7bd2ec !important;
+    color: $on-primary-variant;
+    border: unset;
+    :focus {
+      // background-color: #7bd2ec !important;
+      background-color: $sk-container !important;
+    }
+    :active {
+      // background-color: #7bd2ec !important;
+      background-color: $sk-container !important;
+      visibility: visible;
+      opacity: 1;
+    }
+    :hover {
+      // background-color: #7bd2ec !important;
+      background-color: $sk-container !important;
+    }
+  }
+
+  .custom-flight-button-oneway {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0px 6px;
+    // width: 92%;
+    margin-left: -4px;
+    height: 2.5rem;
+    border: 1px solid $sk-primary !important;
+    border-radius: 4px;
+    background-color: $container;
+    color: $primary2;
+  }
+  .flight-detail-text {
+    font-size: 18px;
+  }
+  .transit-icon {
+    background-color: #f43434;
+  }
+  .airline-iata {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 0.3rem;
+    text-align: center;
+    font-family: $font-family;
+    padding-left: 3.5px;
+  }
+
+  .travel-duration {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #6f6e6e;
+    font-family: $font-family;
+  }
+  .transit-airline {
+    margin-top: -0.8rem;
+    font-size: 12px;
+    color: #f43434;
+    font-family: $font-family;
+  }
+  .seat-left {
+    color: #f43434;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    font-family: $font-family;
+  }
+  .cheap-tag {
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #f5fff6;
+    color: #47cd08;
+    line-height: 14.52px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  .for-web {
+    display: block;
+  }
+  .for-mobile {
+    display: none;
+  }
+  .booking-detail-for-web {
+    display: block;
+    color: $sk-primary;
+
+    .flight-price {
+      // font-size: $t1-size;
+      font-size: $t3-size;
+      font-weight: $font-weight-bold;
+      line-height: 22px;
+      font-family: $font-family;
+      margin-left: auto;
+      color: $on-primary-variant;
+    }
+    .valentine-discount {
+      font-size: 13px;
+      font-weight: $font-weight-bold;
+      line-height: 22px;
+      font-family: $font-family;
+      color: #f43434;
+      margin-left: auto;
+
+      span {
+        font-size: 13px;
+        font-weight: $font-weight-bold;
+        line-height: 22px;
+        font-family: $font-family;
+        color: #f43434;
+      }
+    }
+    .text-old-price {
+      font-size: $t3-size;
+      font-weight: $font-weight-bold;
+      line-height: 22px;
+      font-family: $font-family;
+
+      color: $on-container;
+    }
+  }
+  .booking-detail-for-mobile {
+    display: none;
+  }
+  .multi-city-destinations {
+    font-size: 12px;
+    font-weight: $font-weight-bold;
+    line-height: 20px;
+    color: $on-container;
+    font-family: $font-family;
+  }
+  .first-destination {
+    margin-bottom: -0.5rem !important;
+  }
+  .first-segment {
+    margin-bottom: -2rem !important;
+  }
+  .airline-time {
+    font-size: $b3-size;
+    font-style: normal;
+    font-weight: $font-weight-bold;
+    line-height: 31px;
+    color: $on-container;
+    font-family: $font-family;
+  }
+  .airline-destination-date {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    padding-bottom: 4px;
+  }
+}
+
+button:focus:not(:focus-visible) {
+}
+
+.custom-tooltip {
+  z-index: 9999 !important; /* Ensure tooltip appears above everything */
+  pointer-events: none; /* Avoid interfering with hover events */
+  position: absolute !important;
+}
+
+// @include md {
+@media (max-width: 768px) {
+  .flight-detail-text {
+    margin-top: unset !important;
+    margin-bottom: 0.6rem !important;
+  }
+  .for-web {
+    display: none !important;
+  }
+  .for-mobile {
+    display: block !important;
+  }
+
+  .booking-detail-for-web {
+    display: none !important;
+  }
+  .booking-detail-for-mobile {
+    display: block !important;
+    margin-top: -16px;
+    .discounted-price {
+      color: #f43434;
+    }
+    .booking-detail {
+      // display: flex;
+      // flex-direction: column;
+      color: $sk-primary;
+      align-items: center;
+      justify-content: center;
+    }
+    .custom-book-button {
+      height: 40px;
+      width: 100%;
+      padding: 0px;
+    }
+    .custom-flight-button {
+      height: 40px;
+      width: 100%;
+      padding: 0px;
+    }
+    .price-detail {
+      h4 {
+        margin-bottom: unset !important;
+        margin-top: 4px;
+      }
+      .text-bottom {
+        color: $on-container;
+      }
+    }
+  }
+  .airline-image {
+    width: 39.15px;
+    height: 36px;
+  }
+  .airline-iata {
+    margin-top: 0px !important;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .airline-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hr-line {
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+  }
+}
+@media (max-width: 431px) {
+  .airline-time {
+    display: unset !important;
+  }
+  .booking-detail {
+    padding-left: 1rem !important;
+  }
+  .hr-line {
+    margin-left: 1rem !important;
+    margin-right: 01rem !important;
+  }
+  .search-result-card {
+    gap: 2rem !important;
+  }
+  .airline-iata {
+    text-align: left !important;
+  }
+}

@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* reset styles */
+* {
+  color: inherit;
+  margin: 0;
+}
+
+body {
+  font-family: $font-family;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dotted $neutral2;
+  background-color: $neutral2;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}

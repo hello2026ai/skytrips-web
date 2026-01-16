@@ -1,0 +1,54 @@
+@import "../../../../styles/color";
+@import "../../../../styles/variables";
+
+.class-select-container-mobile {
+  // border-radius: 0px 8px 8px 0px;
+  // border: 1px solid #ccc;
+  font-weight: $font-weight-regular;
+  color: #000000;
+
+  input:focus {
+    color: var(--bs-emphasis-color);
+  }
+
+  &-heading {
+  }
+
+  &-heading,
+  &-paragraph {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-paragraph {
+    font-size: 12px !important;
+  }
+
+  .css-1fdsijx-ValueContainer {
+    padding-right: unset !important;
+  }
+  .css-1xc3v61-indicatorContainer {
+    padding-left: unset !important;
+    color: $on-background !important;
+    width: 20px !important;
+    padding-top: 11px !important;
+    padding-right: unset !important;
+  }
+
+  .css-1jqq78o-placeholder {
+    color: #000000 !important;
+  }
+
+  :where(.css-dev-only-do-not-override-j9bb5n).ant-select .ant-select-arrow {
+    left: 70%;
+  }
+}
+
+@media (max-width: 1024px) {
+  // .class-select-container {
+  .select-input {
+    background-color: unset !important;
+  }
+  // }
+}

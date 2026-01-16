@@ -1,0 +1,72 @@
+.faq {
+  &_section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+    margin-bottom: 1.5rem;
+  }
+
+  &_mainHeading {
+    margin-top: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-right: 2rem;
+    color: #313131;
+  }
+  &_moreBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $on-primary-variant;
+    border: unset;
+  }
+
+  &_mainHeading_all {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #313131;
+  }
+  &_contents {
+    margin-bottom: 2rem;
+  }
+  &_question {
+    font-size: 18px;
+    color: #313131;
+  }
+}
+
+button:focus {
+  background-color: unset !important;
+}
+.accordion-button:not(.collapsed) {
+  color: gray !important;
+  background-color: unset !important;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-icon) !important;
+}
+
+@media (max-width: 768px) {
+  .faq {
+    &_section {
+      padding-top: 0rem;
+      display: unset;
+      grid-template-columns: unset;
+      gap: unset;
+    }
+    &_mainHeading {
+      margin-top: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      margin-right: unset;
+    }
+    &_moreBtn {
+      // margin-top: 0.5rem;
+      margin-bottom: 3rem;
+    }
+  }
+  .view-more-faq {
+    margin-bottom: 3rem;
+  }
+}

@@ -1,0 +1,139 @@
+.btn-modal-groups .nav-pills .nav-link {
+  position: relative;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: black;
+  background-color: transparent;
+  border: none;
+  transition: color 0.3s ease;
+
+  &:focus {
+    background-color: transparent !important;
+  }
+
+  // Underline effect
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: map-get($color-map, "primary");
+    transition: width 0.3s ease;
+  }
+
+  // On hover, expand the underline
+  &:hover::after {
+    width: 50%;
+  }
+}
+
+.btn-modal-groups .nav-pills .nav-link.active {
+  color: black;
+  background-color: transparent !important;
+  &::after {
+    width: 50%;
+  }
+}
+
+//Range Slider style
+.slider-container {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(
+      to right,
+      map-get($color-map, "primary") 45%,
+      #e0e0e0 45%
+    );
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s;
+
+    /* Thumb styling for Webkit browsers */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background-color: map-get($map: $color-map, $key: "primary");
+      border-radius: 50%;
+      border: 3px solid white;
+      cursor: pointer;
+      margin-top: -5px;
+    }
+
+    /* Thumb styling for Firefox */
+    &::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background-color: map-get($map: $color-map, $key: "primary");
+      border-radius: 50%;
+      border: 3px solid white;
+      cursor: pointer;
+    }
+  }
+
+  .max-price {
+    border: 1px solid #eee;
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-top: 2rem;
+    text-align: center;
+    color: $on-container;
+    font-size: $l2-size;
+    font-weight: 400;
+  }
+}
+.time-slider-container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  .time-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(
+      to right,
+      map-get($color-map, "primary") 10%,
+      #e0e0e0 10%
+    );
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s;
+
+    /* Thumb styling for Webkit browsers */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background-color: map-get($map: $color-map, $key: "primary");
+      border-radius: 50%;
+      border: 3px solid white;
+      cursor: pointer;
+      margin-top: -5px;
+    }
+
+    /* Thumb styling for Firefox */
+    &::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background-color: map-get($map: $color-map, $key: "primary");
+      border-radius: 50%;
+      border: 3px solid white;
+      cursor: pointer;
+    }
+  }
+  .time-max-price {
+    color: $on-container;
+    font-size: $l2-size;
+    font-weight: 400;
+  }
+}

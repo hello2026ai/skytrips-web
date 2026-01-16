@@ -1,0 +1,32 @@
+.select-container {
+  .dropdown {
+    border: 1px solid #ccc !important;
+    border-radius: 12px;
+    color: var(--bs-emphasis-color);
+    font-weight: 400;
+  }
+
+  .minus-btn {
+    font-size: 40px;
+  }
+
+  &-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.2px;
+    color: #9d9d9d;
+  }
+
+  &-count {
+    background-color: var(--background-color);
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .passenger-div {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    padding: 2px;
+    opacity: 0.9;
+  }
+}

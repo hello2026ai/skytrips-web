@@ -1,0 +1,50 @@
+.refresh-modal-container {
+  margin-top: 13rem;
+  width: 30rem;
+  .refresh-modal {
+    p {
+      font-size: $b5-size;
+      line-height: 26px;
+      font-weight: $font-weight-regular;
+      color: $on-container;
+      font-style: $font-family;
+    }
+    // width: 40rem;
+  }
+
+  .modal-bg-image {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url("/assets/images/pattern/pattern.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center right;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .refresh-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .refresh-btn-custom {
+      font-size: $b2-size;
+      line-height: $b2-line-height;
+      font-weight: $font-weight-regular;
+      color: $on-container;
+      font-style: $font-family;
+      color: $on-secondary;
+      padding: 10px 30px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .refresh-modal-container {
+    margin-top: 13rem;
+    width: auto;
+  }
+}

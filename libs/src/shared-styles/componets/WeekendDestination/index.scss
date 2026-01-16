@@ -1,0 +1,130 @@
+.weekend-destinations-container {
+  .weekend-card {
+    position: relative;
+    box-shadow: 0px 10px 15px 0px #0000001a;
+    box-shadow: 0px 4px 6px 0px #0000001a;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push button to bottom */
+    min-height: 20rem;
+    .banner {
+      border-radius: 8px;
+      .banner-img {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        height: 256px;
+      }
+    }
+    .card-tag {
+      position: absolute;
+      top: 2%;
+      left: 2%;
+      background-color: $on-primary-variant;
+      color: $sk-container;
+      font-family: $font-family;
+      font-weight: $font-weight-regular;
+      font-size: $l2-size;
+      line-height: 16.94px;
+      letter-spacing: 0%;
+      min-width: 50px;
+      text-align: center;
+      padding: 4px 12px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center; /* Centers content vertically */
+      justify-content: center;
+    }
+    .information {
+      //   background-color: aqua;
+      flex-grow: 1;
+      padding: 8px;
+      color: black;
+      h4 {
+        color: #111827;
+        font-family: $font-family;
+        font-weight: $font-weight-bold;
+        font-size: $h5-size;
+        line-height: 20px;
+        letter-spacing: 0%;
+      }
+      p {
+        font-family: $font-family;
+        font-weight: $font-weight-regular;
+        font-size: $b5-size !important;
+        line-height: 16px;
+        letter-spacing: 0%;
+        color: #374151;
+        padding-top: 0.5rem;
+      }
+      span {
+        font-family: $font-family;
+        font-weight: $font-weight-regular;
+        font-size: $l2-size !important;
+        color: #374151;
+        line-height: 14px;
+        letter-spacing: 0%;
+      }
+    }
+    .book-btn {
+      background-color: $on-primary-variant !important;
+      padding: 10px;
+      color: $sk-container;
+      border-radius: 8px;
+      font-family: $font-family;
+      font-weight: $font-weight-bold;
+      font-size: $b3-size;
+      border: unset;
+      width: 100%;
+    }
+    .book-btn:hover {
+      background-color: #ff909d !important;
+    }
+    .book-btn:focus {
+      background-color: #ff909d !important;
+    }
+    .book-btn:active {
+      background-color: #ff909d !important;
+    }
+  }
+}
+
+.weekend-form-label {
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: $b2-size;
+  line-height: 16.94px;
+  letter-spacing: 0%;
+  color: #374151;
+}
+.weekend-form_agree_text {
+  font-family: $font-family;
+  font-weight: $font-weight-regular;
+  font-size: $b2-size;
+  line-height: 18px;
+  margin-top: 1rem;
+  color: #374151;
+  span {
+    font-family: $font-family;
+    font-weight: $font-weight-regular;
+    font-size: $b2-size;
+    line-height: 18px;
+    color: rgb(28, 180, 250);
+  }
+}
+
+.weekend-textarea {
+  background-color: $sk-container;
+}
+.error-message {
+  color: red !important;
+}
+
+@media (max-width: 768px) {
+  .weekend-destinations-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}

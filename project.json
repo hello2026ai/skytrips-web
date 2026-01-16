@@ -1,0 +1,6 @@
+{
+  "name": "workspace-root",
+  "root": ".",
+  "projectType": "application",
+  "targets": {}
+}

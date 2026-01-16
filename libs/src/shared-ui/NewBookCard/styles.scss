@@ -1,0 +1,179 @@
+@import "../../../../styles/variables";
+
+.book-card-section {
+  font-size: $b2-size;
+  font-family: $font-family;
+  font-weight: $font-weight-regular;
+  line-height: $l2-line-height;
+  color: $on-background;
+  .book-card-container {
+    background-color: $sk-container;
+    border-radius: 12px;
+
+    .trip-info-container {
+      background: linear-gradient(90deg, $sk-primary 0%, #00247d 100%);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      font-size: $b2-size;
+      font-family: $font-family;
+      font-weight: $font-weight-regular;
+      line-height: $l2-line-height;
+      color: $on-primary;
+      .destination-location {
+        font-size: $l1-size;
+        font-family: $font-family;
+        font-weight: $font-weight-bold;
+        line-height: $h5-line-height;
+        color: $on-primary;
+      }
+      .flight-date {
+        font-size: $b2-size;
+        font-family: $font-family;
+        font-weight: $font-weight-regular;
+        line-height: $l2-line-height;
+        color: $on-primary;
+      }
+    }
+    .departure-detail {
+      background-color: $sk-container;
+      font-size: $b2-size;
+      font-family: $font-family;
+      font-weight: $font-weight-regular;
+      line-height: $l2-line-height;
+      color: $on-container;
+
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      .dep-arrival-div {
+        background-color: $sk-primary;
+        padding: 4px 6px;
+        font-size: $b2-size;
+        font-family: $font-family;
+        font-weight: $font-weight-regular;
+        line-height: $l2-line-height;
+        color: $on-primary;
+        border-radius: 2px;
+        min-width: 3.5rem;
+      }
+      .date-time {
+        font-size: $b2-size;
+        font-family: $font-family;
+        font-weight: $font-weight-regular;
+        line-height: $l2-line-height;
+        color: $on-background;
+        margin-top: 4px;
+      }
+    }
+
+    .breadcrumb {
+      margin-bottom: unset !important;
+
+      .row > * {
+        margin-top: unset;
+      }
+    }
+    .show-details {
+      font-size: 16px;
+      font-weight: 400 !important;
+      color: #5143d9;
+      cursor: pointer;
+
+      .dropdown-icon {
+        margin-top: -3px;
+      }
+    }
+
+    .time-travel-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.5rem;
+      h6 {
+        font-size: $b2-size;
+        font-family: $font-family;
+        font-weight: $font-weight-regular;
+        line-height: 26px;
+        color: $on-background;
+      }
+
+      .vertical-dotted-border {
+        border-left: 3px dotted #d9d9d9; /* Vertical dotted border on the left */
+        height: 30px; /* Adjust height as needed */
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        /* Optional padding */
+      }
+    }
+    .airport-detail {
+      font-size: $b2-size;
+      font-family: $font-family;
+      font-weight: $font-weight-regular;
+      line-height: 26px;
+      color: $on-background;
+      h6 {
+        font-size: $b2-size;
+        font-family: $font-family;
+        font-weight: $font-weight-regular;
+        line-height: 26px;
+        color: $on-background;
+        min-width: 2.5rem;
+      }
+    }
+  }
+  .time-zone {
+    font-size: 12px;
+    font-family: $font-family;
+    font-weight: $font-weight-regular;
+    line-height: 20px;
+    color: $on-container;
+  }
+  .hotline {
+    background: linear-gradient(90deg, #0c0073 0%, #0d3bae 100%);
+    // background: linear-gradient(90deg, #f7616d 0%, #ff909d 100%);
+
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border-radius: 44px;
+    .hotline-text {
+      //styleName: Label 1;
+      font-family: $font-family;
+      font-size: $l2-size;
+      font-weight: $font-weight-regular;
+      line-height: $l2-line-height;
+      color: $on-secondary;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: left;
+      gap: 4px;
+    }
+  }
+
+  .transit-detail {
+    font-size: $b2-size;
+    font-weight: $font-weight-regular;
+    font-family: $font-family;
+    line-height: 26px;
+    color: #707070;
+  }
+  .call-link {
+    display: none;
+  }
+  .support-number {
+    display: block;
+  }
+}
+
+@media (max-width: 500px) {
+  .support-number {
+    display: none !important;
+  }
+  .call-link {
+    display: block !important;
+    color: $sk-container;
+  }
+}

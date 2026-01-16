@@ -1,0 +1,56 @@
+@import "../../shared-styles/color";
+@import "../../shared-styles/variables";
+
+.time-input {
+  background-color: #e6e0e9;
+  color: #4f378a;
+  width: 5rem;
+  height: 3.5rem;
+  font-size: $t1-size;
+  font-weight: $font-weight-regular;
+  font-family: $font-family;
+}
+.time-btn-container {
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+.time-dot {
+  font-size: $h3-size;
+  font-weight: $font-weight-regular;
+  font-family: $font-family;
+}
+.time-btn {
+  background-color: $sk-container !important;
+  color: #79747e !important;
+  border: 1px solid #79747e;
+
+  &.active {
+    background-color: $sk-primary !important;
+    color: $sk-container !important;
+    border: unset;
+  }
+}
+.time-btn:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.time-btn:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+// .time-btn :active {
+//   background-color: $sk-primary !important;
+//   color: $sk-container !important;
+//   border: unset;
+// }
+.selected-time {
+  background-color: $sk-primary !important;
+  color: $sk-container !important;
+  border: unset;
+}
+.error-message {
+  font-size: 11px;
+  font-family: $font-family;
+  color: red !important;
+}

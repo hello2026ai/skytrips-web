@@ -1,0 +1,161 @@
+.home-section-1 {
+  .flight-form {
+    // width: 90% !important;
+    // left: 50%;
+    // transform: translateX(-50%);
+    top: calc(100% - 20%);
+
+    @media (max-width: "991px") {
+      & {
+        position: relative !important;
+        width: initial !important;
+        top: initial;
+        left: initial;
+        transform: initial;
+      }
+    }
+
+    .form-date-picker {
+      // height: 40px !important;
+      input {
+        height: 45px;
+        font-weight: 700;
+        color: var(--body-text);
+        // font-family: var(--bs-body-font-family) !important;
+        // color: #000;
+        // color: ;
+      }
+    }
+  }
+
+  &-container {
+    @media (max-width: "568px") {
+      & {
+        height: unset !important;
+      }
+    }
+
+    .dropdown-class {
+      li {
+        cursor: pointer;
+        padding: 10px;
+        &:hover {
+          background-color: var(--primary2);
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.text-discover {
+  padding: 2rem 0rem !important;
+}
+
+.home-section-2 {
+  padding-bottom: 1rem;
+}
+
+// media queries
+@media (max-width: "991px") {
+  .home-section-1 {
+    .flight-form {
+      position: relative !important;
+      width: initial !important;
+      top: initial;
+      left: initial;
+      transform: initial;
+    }
+
+    &-container {
+      height: unset !important;
+    }
+  }
+
+  .home-section-2 {
+    margin-top: unset;
+  }
+}
+@media (max-width: 1024px) {
+  .main_heading {
+    padding-top: unset !important;
+  }
+  .home-section-2 {
+    padding-top: 2rem;
+  }
+  .home-search-wrapper {
+    .position-absolute {
+      // right: 2rem !important;
+    }
+  }
+  .text-discover {
+    padding-bottom: unset !important;
+    .ms-9 {
+      margin-left: 10.5rem !important;
+    }
+  }
+  // .arrow-img {
+
+  // }
+}
+@media (max-width: 991px) {
+  .main_heading {
+    margin-bottom: 6rem;
+    h1 {
+      margin-top: unset !important;
+      padding-top: unset !important;
+    }
+  }
+  .home-section-2 {
+    padding-top: 37.5rem;
+  }
+  .airline_flow {
+    padding-bottom: unset;
+    margin-top: auto;
+  }
+}
+@media (max-width: 600px) {
+  .home-section-2 {
+    padding-top: 9rem !important;
+    margin-top: 3.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .main_heading {
+    padding-top: unset !important;
+    margin-top: unset !important;
+    margin-bottom: 4.5rem;
+  }
+  .home-section-2 {
+    // padding-top: unset !important;
+    // margin-top: 2rem !important;
+  }
+}
+@media (max-width: 430px) {
+  .main_heading {
+    padding-top: unset !important;
+    margin-top: unset !important;
+    margin-bottom: 7rem;
+  }
+  .home-section-2 {
+    padding-top: 0rem;
+    // margin-top: 4rem !important;
+  }
+  .text-discover {
+    padding-bottom: 0rem !important;
+  }
+  .flight-discover {
+    text-align: center;
+    .d-flex {
+      display: unset !important;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  // .main_heading {
+  //   margin-bottom: 7rem;
+  // }.main_heading {
+  //   margin-bottom: 7rem;
+  // }
+}

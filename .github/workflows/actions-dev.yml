@@ -1,0 +1,127 @@
+name: Skytrips Dev FE & Admin Build and Deploy on AWS
+on:
+  push:
+    branches: [dev]
+jobs:
+  build:
+    runs-on: [self-hosted, devserver]
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Pull environment files from S3
+        run: |
+          aws s3 cp s3://skytrips-resources-develop/frontend-dev/skytrips-fe-dev-env.txt apps/skytripsv1/.env
+          aws s3 cp s3://skytrips-resources-develop/admin-dev/skytrips-admin-dev-env.txt apps/dashboardsv1/.env
+          pwd
+
+      - name: Clean existing dependencies
+        run: |
+          yarn cache clean
+          rm -rf node_modules
+
+      - name: Install dependencies
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=4096"
+          yarn install --network-timeout 300000
+
+      # Added debug steps
+      - name: Debug Nx workspace
+        run: |
+          echo "Current directory structure:"
+          find . -maxdepth 3 -type f -name "project.json" | sort
+          echo "Nx configuration:"
+          cat nx.json
+
+      # Added cleanup steps
+      - name: Clean Nx cache
+        run: |
+          rm -rf node_modules/.cache/nx
+          yarn nx reset
+
+      # Replace the build step with individual builds
+      - name: Build projects individually
+        run: |
+          export NX_SKIP_NX_CACHE=true
+          yarn nx build skytripsv1
+          yarn nx build dashboardsv1
+
+      - name: Stop existing PM2 process if running
+        run: |
+          pm2 list | grep skytrips-dev-fe-admin && pm2 stop skytrips-dev-fe-admin && pm2 delete skytrips-dev-fe-admin || echo "No running PM2 process found."
+      - name: Check and free up occupied ports (3000, 3500)
+        run: |
+          if lsof -i :3000 -sTCP:LISTEN -t >/dev/null; then
+            lsof -i :3000 -sTCP:LISTEN -t | xargs kill -9
+          fi
+          if lsof -i :3500 -sTCP:LISTEN -t >/dev/null; then
+            lsof -i :3500 -sTCP:LISTEN -t | xargs kill -9
+          fi
+      - name: Start the application using PM2
+        run: |
+          pm2 start yarn --name skytrips-dev-fe-admin --interpreter bash --env NX_CLOUD=false -- start
+      - name: Clear Yarn Cache
+        run: yarn cache clean
+
+
+# name: Skytrips Dev FE & Admin Build and Deploy on AWS
+
+# on:
+#   push:
+#     branches: [dev]
+
+# jobs:
+#   build:
+#     runs-on: [self-hosted, devserver]
+
+#     strategy:
+#       matrix:
+#         node-version: [20.x]
+
+#     steps:
+#       - uses: actions/checkout@v2
+
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: ${{ matrix.node-version }}
+
+#       - name: Pull environment files from S3
+#         run: |
+#           aws s3 cp s3://skytrips-resources-develop/frontend-dev/skytrips-fe-dev-env.txt apps/skytrips/.env
+#           aws s3 cp s3://skytrips-resources-develop/admin-dev/skytrips-admin-dev-env.txt apps/dashboards/.env
+#           pwd
+
+#       - name: Install dependencies
+#         run: yarn install
+
+#       - name: Build the project
+#         run: yarn build --verbose
+
+#       - name: Stop existing PM2 process if running
+#         run: |
+#           pm2 list | grep skytrips-dev-fe-admin && pm2 stop skytrips-dev-fe-admin && pm2 delete skytrips-dev-fe-admin || echo "No running PM2 process found."
+
+#       - name: Check and free up occupied ports (3000, 3500)
+#         run: |
+#           if lsof -i :3000 -sTCP:LISTEN -t >/dev/null; then
+#             lsof -i :3000 -sTCP:LISTEN -t | xargs kill -9
+#           fi
+#           if lsof -i :3500 -sTCP:LISTEN -t >/dev/null; then
+#             lsof -i :3500 -sTCP:LISTEN -t | xargs kill -9
+#           fi
+
+#       - name: Start the application using PM2
+#         run: |
+#           export NX_CLOUD=false
+#           pm2 start yarn --name skytrips-dev-fe-admin --interpreter bash -- start
+
+#       - name: Clear Yarn Cache
+#         run: yarn cache clean
+

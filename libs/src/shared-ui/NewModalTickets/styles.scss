@@ -1,0 +1,95 @@
+@import "../../shared-styles/color";
+@import "../../shared-styles/variables";
+
+
+.ticket-container {
+  background-color: $sk-container;
+  &-airlines {
+    overflow: auto;
+    white-space: nowrap;
+    gap: 40px;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  .dash-line {
+    // border: none !important;
+    border: 1px dashed #d9d9d9;
+    opacity: 0.5;
+    height: 130px;
+    width: 0;
+    margin-left: 0.65rem;
+  }
+  .Flight-destinations {
+    color: $primary2;
+    font-size: $t3-size;
+    font-weight: $font-weight-bold;
+    font-family: $font-family;
+    line-height: normal;
+  }
+  .date-time-text {
+    color: #6f6e6e;
+  }
+  .airport-name {
+    color: $on-container;
+
+    font-size: $t4-size;
+    font-style: normal;
+    font-weight: $font-weight-semibold;
+    line-height: normal;
+  }
+  .airline-label {
+    font-size: $l2-size !important;
+    font-style: normal;
+    font-weight: $font-weight-regular !important;
+    font-family: $font-family !important;
+    color: $on-container;
+  }
+  .airline-icon-image {
+    display: block !important;
+    min-width: 40%;
+  }
+  .airline-icon-image-for-mobile {
+    display: none !important;
+  }
+  .arrival-destination {
+    margin-bottom: 2.5rem !important;
+  }
+}
+@media (max-width: 431px) {
+  .ticket-container {
+    .airline-icon-image {
+      display: none !important;
+    }
+    .airline-icon-image-for-mobile {
+      display: block !important;
+      margin-top: 1rem;
+    }
+    .Flight-destinations {
+      font-size: $l1-size;
+    }
+    .airport-name {
+      font-size: $l2-size;
+    }
+    .airline-label {
+      font-size: 12px !important;
+      margin-bottom: unset !important;
+    }
+    .date-time-text {
+      font-size: 12px;
+    }
+    .Flight-destinations {
+      margin-top: 2rem !important;
+      margin-left: 1rem !important;
+    }
+    .arrival-destination {
+      margin-bottom: 1rem !important;
+    }
+    .airline-icon-image-for-mobile {
+      margin-top: unset !important;
+    }
+  }
+}

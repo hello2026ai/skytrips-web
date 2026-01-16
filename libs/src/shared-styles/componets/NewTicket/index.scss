@@ -1,0 +1,197 @@
+.expanded-border {
+  border: 2px solid #007bff;
+  border-radius: 8px;
+}
+
+
+.ticket-container {
+  position: relative;
+  z-index: 10;
+}
+.reunion-div {
+  background: linear-gradient(90deg, #ffd8dc 0%, #ff909d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // gap: 3rem;
+  padding: 1rem 1.8rem;
+  border-radius: 8px;
+  h4 {
+    //styleName: Title 3;
+    font-family: $font-family;
+    font-size: $b4-size;
+    font-weight: $font-weight-bold;
+    line-height: 29px;
+    text-align: left;
+    color: $sk-container;
+  }
+
+  h3 {
+    font-family: $font-family;
+    font-size: $h4-size;
+    font-weight: $font-weight-bold;
+    line-height: 32px;
+    color: $on-primary-variant !important;
+  }
+  p {
+    font-family: $font-family;
+    font-size: 12px;
+    font-weight: $font-weight-regular;
+    line-height: 20px;
+    text-align: left;
+    color: $sk-container !important;
+  }
+}
+.celebration-div {
+  background-image: url("/assets/images/valentine/celebrationBg.svg");
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-size: cover; /* Ensures the image covers the entire element */
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // gap: 3rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  h4 {
+    //styleName: Title 3;
+    font-family: $font-family;
+    font-size: $b4-size;
+    font-weight: $font-weight-bold;
+    line-height: 29px;
+    text-align: left;
+    color: $sk-container;
+  }
+
+  h3 {
+    font-family: $font-family;
+    font-size: $h4-size;
+    font-weight: $font-weight-bold;
+    line-height: 32px;
+    color: $sk-container !important;
+  }
+  p {
+    font-family: $font-family;
+    font-size: 12px;
+    font-weight: $font-weight-regular;
+    line-height: 20px;
+    text-align: left;
+    color: $sk-container !important;
+  }
+}
+
+.nostalgia-div {
+  background-color: #ff909d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // gap: 3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.8rem;
+  border-radius: 8px;
+  h4 {
+    //styleName: Title 3;
+    font-family: $font-family;
+    font-size: $b4-size;
+    font-weight: $font-weight-bold;
+    line-height: 29px;
+    text-align: left;
+    color: $sk-container;
+  }
+
+  h3 {
+    font-family: $font-family;
+    font-size: $h4-size;
+    font-weight: $font-weight-bold;
+    line-height: 32px;
+    color: $sk-container !important;
+  }
+  p {
+    font-family: $font-family;
+    font-size: 12px;
+    font-weight: $font-weight-regular;
+    line-height: 20px;
+    text-align: left;
+    color: $sk-container !important;
+  }
+  .description {
+    font-size: $b5-size;
+    font-family: $font-family;
+    font-weight: $font-weight-regular;
+    line-height: 26px;
+  }
+}
+
+.counselling-div {
+  background-image: url("/assets/images/valentine/counsellingBg.svg");
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-size: cover; /* Ensures the image covers the entire element */
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // gap: 3rem;
+  padding: 0rem 1.5rem;
+  border-radius: 8px;
+  h4 {
+    //styleName: Title 3;
+    font-family: $font-family;
+    font-size: $b4-size;
+    font-weight: $font-weight-bold;
+    line-height: 29px;
+    text-align: left;
+    color: $sk-container;
+  }
+
+  h3 {
+    font-family: $font-family;
+    font-size: $h4-size;
+    font-weight: $font-weight-bold;
+    line-height: 32px;
+    color: #000000 !important;
+  }
+  p {
+    font-family: $font-family;
+    font-size: 12px;
+    font-weight: $font-weight-regular;
+    line-height: 20px;
+    text-align: left;
+    color: #000000 !important;
+  }
+  .discount-tag {
+    background-color: #f7616d;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+  }
+  .description {
+    font-size: $b5-size;
+    font-family: $font-family;
+    font-weight: $font-weight-regular;
+    line-height: 26px;
+  }
+}
+
+@media (max-width: 430px) {
+  .love-big-icon {
+    position: absolute;
+    z-index: 5;
+    top: 0.5%;
+    right: unset;
+    left: 87%;
+    overflow: hidden !important;
+  }
+}
+@media (max-width: 424px) {
+  .love-big-icon {
+    position: absolute;
+    z-index: 5;
+    top: 1.2%;
+    right: unset;
+    left: 87%;
+    overflow: hidden !important;
+  }
+}

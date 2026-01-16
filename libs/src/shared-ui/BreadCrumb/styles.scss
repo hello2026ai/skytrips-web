@@ -1,0 +1,28 @@
+.breadcrumbs {
+  margin-top: -20px;
+  padding-bottom: 10px;
+}
+
+.bread-link {
+  color: #828282;
+  text-decoration: none !important;
+}
+.bread-link:hover {
+  color: #000c73 !important;
+  background-color: unset !important;
+}
+
+.breadcrumbs .breadcrumb-active .bread-link {
+  color: #313131;
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs {
+    margin-top: -10px !important;
+  }
+}
+@media (max-width: 430px) {
+  .breadcrumb {
+    margin-bottom: unset !important;
+  }
+}

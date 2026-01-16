@@ -1,0 +1,113 @@
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  width: auto;
+
+  &__selected {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // background-color: #e3e4ef;
+    // padding: 8px;
+    cursor: pointer;
+    // border: 1px solid #ccc;
+    width: auto;
+    .drop-icon {
+      // margin-right: 8px;
+      // margin-left: 4px;
+    }
+  }
+  &__selected-contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // background-color: #e3e4ef;
+    padding: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+    width: auto;
+    .drop-icon {
+      // margin-right: 8px;
+      // margin-left: 4px;
+    }
+  }
+
+  &__options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-width: 300px;
+
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 10;
+    max-height: 250px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    .country-code {
+      font-size: small;
+    }
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    padding: 0px 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    // margin-right: 10px;
+
+    img {
+      // margin-right: 8px;
+    }
+    ul {
+      list-style: none;
+      padding-left: unset !important;
+      margin-bottom: 0.5rem !important;
+      width: fit-content;
+    }
+  }
+
+  &__option:hover {
+    background-color: #e3e4ef;
+  }
+
+  &__filter_search {
+    border: 1px solid #e3e4ef;
+    border-radius: 6px;
+    margin: 8px;
+    display: flex;
+    flex-direction: row;
+    max-width: 300px;
+    min-width: 250px;
+    padding-left: 4px;
+  }
+  &__search {
+    border: unset;
+    padding: 8px;
+    outline: unset;
+    width: 90%;
+    background-color: #ffffff !important;
+    font-size: 16px;
+  }
+}
+
+// .text-input-container input {
+//   background-color: #fff;
+//   // border: unset;
+// }
+
+@media (max-width: 375px) {
+  .custom-dropdown {
+    &__options {
+      max-width: 250px;
+      // overflow-x: hidden;
+    }
+    &__filter_search {
+      min-width: 200px;
+    }
+  }
+}

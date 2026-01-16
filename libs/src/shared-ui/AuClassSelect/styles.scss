@@ -1,0 +1,24 @@
+.class-select-conatiner-au {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-weight: 400;
+  color: var(--bs-emphasis-color);
+
+  input:focus {
+    color: var(--bs-emphasis-color);
+  }
+
+  &-heading {
+  }
+
+  &-heading,
+  &-paragraph {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-paragraph {
+    font-size: 12px !important;
+  }
+}

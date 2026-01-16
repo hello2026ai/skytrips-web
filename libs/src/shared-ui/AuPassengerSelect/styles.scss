@@ -1,0 +1,34 @@
+.select-container-au {
+  .dropdown {
+    border: none !important;
+    border-radius: 6px !important;
+    color: var(--bs-emphasis-color);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+    letter-spacing: 0.2px;
+    background-color: #ffffff;
+  }
+
+  .minus-btn {
+    font-size: 20px;
+  }
+  // .plus-minus-icon {
+  //   width: 10px;
+  //   height: 10px;
+  // }
+
+  &-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.2px;
+    color: #9d9d9d;
+  }
+
+  &-count {
+    background-color: var(--background-color);
+    // padding-left: 8px;
+    // padding-right: 8px;
+  }
+}

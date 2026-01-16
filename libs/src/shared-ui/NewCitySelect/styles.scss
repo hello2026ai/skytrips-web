@@ -1,0 +1,91 @@
+@import "../../../../styles/color";
+@import "../../../../styles/variables";
+
+.city-select-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 4px;
+  background-color: $sk-background;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  width: 100% !important;
+  height: 44px;
+
+  &-heading {
+    font-size: 14px;
+    font-weight: $font-weight-regular;
+    color: $on-background;
+    // font-family: $font-family;
+  }
+
+  &-heading,
+  &-paragraph {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-paragraph {
+    font-size: 12px !important;
+  }
+
+  .css-1fdsijx-ValueContainer {
+    // background-color: #f7f7f7 !important;
+    // border-radius: 4px;
+    width: 100% !important;
+  }
+  .select-input {
+    .css-ef6a-control {
+      background-color: $sk-background !important;
+      width: 100% !important;
+    }
+  }
+
+  .css-qbdosj-Input {
+    height: 7px !important;
+  }
+
+  .ant-select-selector {
+    border: unset !important;
+    background-color: unset !important;
+  }
+}
+.field-name {
+  display: none;
+}
+:where(.css-dev-only-do-not-override-j9bb5n).ant-tree-select-dropdown
+  .ant-select-tree
+  .ant-select-tree-node-content-wrapper.ant-select-tree-node-selected {
+  background-color: unset !important;
+}
+:where(.css-dev-only-do-not-override-j9bb5n).ant-select-single.ant-select-open
+  .ant-select-selection-item {
+  color: $on-background !important;
+}
+
+// :where(.css-dev-only-do-not-override-j9bb5n).ant-select-single
+//   .ant-select-selector
+//   .ant-select-selection-item {
+//   align-self: unset;
+// }
+@media (max-width: 1025px) {
+  .city-select-container {
+    background-color: $sk-container !important;
+    .select-input {
+      .css-z3f9nq-control {
+        background-color: $sk-container !important;
+      }
+
+      .css-1jqq78o-placeholder {
+        padding-left: unset !important;
+      }
+    }
+  }
+  .field-name {
+    display: block;
+  }
+  .from-to-icon {
+    margin-bottom: 2rem;
+  }
+}

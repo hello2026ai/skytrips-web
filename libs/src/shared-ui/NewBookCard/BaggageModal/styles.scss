@@ -1,0 +1,38 @@
+.baggagemodal {
+  background-color: #eaeaea;
+  overflow: hidden;
+
+  &__title {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 15px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      border-bottom: 1px solid #000c73;
+    }
+
+    &__detail {
+      font-size: 16px;
+      font-weight: 400;
+      padding-top: 25px;
+      padding-left: 50px;
+    }
+
+    &__body {
+      // background-color: #e3e4ef;
+      margin-bottom: 5px;
+
+      &__single {
+        font-size: 16px;
+        font-weight: 400;
+        padding: 15px;
+        color: #9d9d9d;
+      }
+    }
+  }
+  &_table_row {
+    background-color: #e3e4ef;
+  }
+}

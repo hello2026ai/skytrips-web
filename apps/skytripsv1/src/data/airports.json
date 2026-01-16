@@ -1,0 +1,212 @@
+[
+  {
+    "municipality": "Sydney",
+    "country": "Australia",
+    "region": "NSW",
+    "hasLargeAirport": true,
+    "airports": [
+      {
+        "id": "SYD",
+        "type": "large_airport",
+        "name": "Sydney Kingsford Smith Airport",
+        "municipality": "Sydney",
+        "isoCountry": "AU",
+        "iataCode": "SYD",
+        "publishedStatus": true,
+        "popularity": 100
+      }
+    ]
+  },
+  {
+    "municipality": "Melbourne",
+    "country": "Australia",
+    "region": "VIC",
+    "hasLargeAirport": true,
+    "airports": [
+      {
+        "id": "MEL",
+        "type": "large_airport",
+        "name": "Melbourne Airport",
+        "municipality": "Melbourne",
+        "isoCountry": "AU",
+        "iataCode": "MEL",
+        "publishedStatus": true,
+        "popularity": 95
+      }
+    ]
+  },
+  {
+    "municipality": "Kathmandu",
+    "country": "Nepal",
+    "region": "Bagmati",
+    "hasLargeAirport": true,
+    "airports": [
+      {
+        "id": "KTM",
+        "type": "large_airport",
+        "name": "Tribhuvan International Airport",
+        "municipality": "Kathmandu",
+        "isoCountry": "NP",
+        "iataCode": "KTM",
+        "publishedStatus": true,
+        "popularity": 90
+      }
+    ]
+  },
+  {
+    "municipality": "London",
+    "country": "United Kingdom",
+    "region": "ENG",
+    "hasLargeAirport": true,
+    "airports": [
+      {
+        "id": "LHR",
+        "type": "large_airport",
+        "name": "Heathrow Airport",
+        "municipality": "London",
+        "isoCountry": "GB",
+        "iataCode": "LHR",
+        "publishedStatus": true,
+        "popularity": 98
+      },
+      {
+        "id": "LGW",
+        "type": "large_airport",
+        "name": "Gatwick Airport",
+        "municipality": "London",
+        "isoCountry": "GB",
+        "iataCode": "LGW",
+        "publishedStatus": true,
+        "popularity": 85
+      }
+    ]
+  },
+  {
+    "municipality": "New York",
+    "country": "United States",
+    "region": "NY",
+    "hasLargeAirport": true,
+    "airports": [
+      {
+        "id": "JFK",
+        "type": "large_airport",
+        "name": "John F. Kennedy International Airport",
+        "municipality": "New York",
+        "isoCountry": "US",
+        "iataCode": "JFK",
+        "publishedStatus": true,
+        "popularity": 96
+      },
+      {
+        "id": "EWR",
+        "type": "large_airport",
+        "name": "Newark Liberty International Airport",
+        "municipality": "New York",
+        "isoCountry": "US",
+        "iataCode": "EWR",
+        "publishedStatus": true,
+        "popularity": 80
+      }
+    ]
+  },
+  {
+    "municipality": "Dubai",
+    "country": "United Arab Emirates",
+    "region": "DU",
+    "hasLargeAirport": true,
+    "airports": [
+      {
+        "id": "DXB",
+        "type": "large_airport",
+        "name": "Dubai International Airport",
+        "municipality": "Dubai",
+        "isoCountry": "AE",
+        "iataCode": "DXB",
+        "publishedStatus": true,
+        "popularity": 97
+      }
+    ]
+  },
+  {
+    "municipality": "Singapore",
+    "country": "Singapore",
+    "region": "SG",
+    "hasLargeAirport": true,
+    "airports": [
+      {
+        "id": "SIN",
+        "type": "large_airport",
+        "name": "Singapore Changi Airport",
+        "municipality": "Singapore",
+        "isoCountry": "SG",
+        "iataCode": "SIN",
+        "publishedStatus": true,
+        "popularity": 94
+      }
+    ]
+  },
+  {
+    "municipality": "Tokyo",
+    "country": "Japan",
+    "region": "Tokyo",
+    "hasLargeAirport": true,
+    "airports": [
+      {
+        "id": "HND",
+        "type": "large_airport",
+        "name": "Haneda Airport",
+        "municipality": "Tokyo",
+        "isoCountry": "JP",
+        "iataCode": "HND",
+        "publishedStatus": true,
+        "popularity": 92
+      },
+      {
+        "id": "NRT",
+        "type": "large_airport",
+        "name": "Narita International Airport",
+        "municipality": "Tokyo",
+        "isoCountry": "JP",
+        "iataCode": "NRT",
+        "publishedStatus": true,
+        "popularity": 88
+      }
+    ]
+  },
+  {
+    "municipality": "Bali",
+    "country": "Indonesia",
+    "region": "Bali",
+    "hasLargeAirport": true,
+    "airports": [
+      {
+        "id": "DPS",
+        "type": "large_airport",
+        "name": "Ngurah Rai International Airport",
+        "municipality": "Denpasar",
+        "isoCountry": "ID",
+        "iataCode": "DPS",
+        "publishedStatus": true,
+        "popularity": 91
+      }
+    ]
+  },
+  {
+    "municipality": "Bangkok",
+    "country": "Thailand",
+    "region": "Bangkok",
+    "hasLargeAirport": true,
+    "airports": [
+      {
+        "id": "BKK",
+        "type": "large_airport",
+        "name": "Suvarnabhumi Airport",
+        "municipality": "Bangkok",
+        "isoCountry": "TH",
+        "iataCode": "BKK",
+        "publishedStatus": true,
+        "popularity": 89
+      }
+    ]
+  }
+]

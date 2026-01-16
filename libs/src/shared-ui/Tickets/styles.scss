@@ -1,0 +1,24 @@
+.ticket-container {
+  &-airlines {
+    overflow: auto;
+    white-space: nowrap;
+    gap: 40px;
+  }
+  .custom-book-button {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .flight-detail-text {
+    font-size: 18px;
+  }
+  .seat-left {
+    text-align: left;
+  }
+}
+
+@media (max-width: 430px) {
+  .flight-detail-text {
+    margin-top: unset !important;
+    margin-bottom: 0.6rem !important;
+  }
+}
