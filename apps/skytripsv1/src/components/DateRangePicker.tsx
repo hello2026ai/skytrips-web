@@ -130,6 +130,19 @@ export function DateRangePicker({
     updatePosition();
   }, [open, tripType, updatePosition]);
 
+  // Track previous trip type to detect changes
+  const prevTripTypeRef = React.useRef(tripType);
+
+  // Auto-open calendar when switching to round trip from one-way
+  React.useEffect(() => {
+    if (prevTripTypeRef.current === 'one-way' && tripType === 'round' && !open) {
+      setOpen(true);
+      setIsActivelySelecting(false);
+      setTimeout(updatePosition, 0);
+    }
+    prevTripTypeRef.current = tripType;
+  }, [tripType, open, updatePosition]);
+
   // Handle window events
   React.useEffect(() => {
     if (!open) return;
@@ -240,7 +253,7 @@ export function DateRangePicker({
         ref={containerRef}
         onClick={openCalendar}
       >
-        <div className="border border-gray-300 rounded-md overflow-hidden md:min-h-[77px] flex">
+        <div className="border border-gray-300 rounded-md overflow-hidden min-h-[4.8125rem] flex">
           <div className={cn(
             'grid w-full',
             tripType === 'round' ? 'grid-cols-2' : 'grid-cols-1'
@@ -499,7 +512,7 @@ export function DateRangePicker({
                         {customHeaderCount === 0 && (
                           <button
                             aria-label="Previous Month"
-                            className="p-1 rounded-full hover:bg-blue-50"
+                            className="p-2 rounded-full hover:bg-blue-50 min-w-[44px] min-h-[44px] flex items-center justify-center"
                             onClick={decreaseMonth}
                             type="button"
                           >
@@ -521,7 +534,7 @@ export function DateRangePicker({
                           window.innerWidth < 640) && (
                           <button
                             aria-label="Next Month"
-                            className="p-1 rounded-full hover:bg-blue-50"
+                            className="p-2 rounded-full hover:bg-blue-50 min-w-[44px] min-h-[44px] flex items-center justify-center"
                             onClick={increaseMonth}
                             type="button"
                           >

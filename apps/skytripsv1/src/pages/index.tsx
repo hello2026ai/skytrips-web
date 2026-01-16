@@ -28,6 +28,10 @@ import { RecentSearches } from '../components/RecentSearches';
 import { useEffect, useState } from 'react';
 import { encodeData } from '../utils/urlEncoding';
 import TopDeals from '../components/TopDeals';
+import GoogleReviews from '../components/GoogleReviews';
+import FAQSection from '../components/FAQSection';
+import WhyChooseUs from '../components/WhyChooseUs';
+import PopularDestinations from '../components/PopularDestinations';
 import {
   getHomePageConfig,
   GeneralSettings,
@@ -547,8 +551,16 @@ export default function Home({ initialSettings }: HomeProps) {
             </div>
           </section>
           
+          <WhyChooseUs />
+          
           <TopDeals />
           
+          <GoogleReviews />
+          
+          <PopularDestinations />
+          
+          <FAQSection />
+
           {/* <section className="mt-7 mb-7 ">
             <RecentSearches
               onSearchClick={handleSearchSubmit}

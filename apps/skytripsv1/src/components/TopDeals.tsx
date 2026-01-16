@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
-import { ArrowLeft, ArrowRight, Plane, Luggage, ChevronDown } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Plane, Luggage, ChevronDown, Calendar } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import dealsService, { Deal as ApiDeal } from '../../lib/dealsService';
 
@@ -145,56 +145,58 @@ const TopDeals = () => {
         <div className="flex -ml-6">
           {deals.map((deal) => (
             <div key={deal.id} className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.33%] pl-6 min-w-0">
-              <div className="group relative h-[420px] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
-                {/* Background Image */}
-                <Image
-                  src={deal.image}
-                  alt={deal.city}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20" />
-
-                {/* Content Card */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white rounded-2xl p-5 shadow-lg">
-                  {/* Header: Route & Logo */}
-                  <div className="flex justify-between items-start mb-2">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                      <span>{deal.originCode}</span>
-                      <Plane className="w-3 h-3 text-slate-400" />
+              <div className="group h-full bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col">
+                {/* Image Section - Top Half */}
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src={deal.image}
+                    alt={deal.city}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-sm border border-slate-100">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-blue-600">
                       <span>{deal.code}</span>
+                      <Plane className="w-3 h-3 text-slate-400 rotate-45" />
                     </div>
-                    <div className="relative w-8 h-8 md:w-10 md:h-10">
+                  </div>
+                </div>
+
+                {/* Content Section - Bottom Half */}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{deal.city}</h3>
+                      <p className="text-sm text-slate-500 mt-1">{deal.origin} to {deal.city}</p>
+                    </div>
+                    <div className="relative w-10 h-10 bg-slate-50 rounded-full p-1.5">
                       <Image 
                         src={deal.airlineLogo} 
                         alt="Airline" 
                         fill
-                        className="object-contain"
+                        className="object-contain p-1.5"
                       />
                     </div>
                   </div>
 
-                  {/* City Name */}
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{deal.city}</h3>
-
-                  {/* Footer: Details & Price */}
-                  <div className="flex justify-between items-end">
-                    <div className="space-y-1">
-                      <div className="text-sm text-slate-500 font-medium">{deal.dates}</div>
-                      <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                        <Luggage className="w-3.5 h-3.5" />
-                        <span>{deal.baggage}</span>
-                      </div>
+                  <div className="space-y-3 mb-6 flex-1">
+                    <div className="flex items-center text-sm text-slate-600 bg-slate-50 px-3 py-2 rounded-lg">
+                      <Calendar className="w-4 h-4 mr-2.5 text-blue-500" />
+                      {deal.dates}
                     </div>
+                    <div className="flex items-center text-sm text-slate-600 bg-slate-50 px-3 py-2 rounded-lg">
+                      <Luggage className="w-4 h-4 mr-2.5 text-blue-500" />
+                      {deal.baggage}
+                    </div>
+                  </div>
 
-                    <button className="flex items-center gap-2 bg-blue-500 text-white pl-4 pr-3 py-2 rounded-lg hover:bg-blue-600 transition-colors shadow-md shadow-blue-200 group/btn">
-                      <div className="flex flex-col items-start leading-none">
-                        <span className="text-[10px] opacity-80 font-medium">from</span>
-                        <span className="text-lg font-bold">${deal.price}</span>
-                      </div>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                  <div className="flex items-center justify-between pt-5 border-t border-slate-100 mt-auto">
+                    <div>
+                      <p className="text-xs text-slate-500 font-medium uppercase tracking-wide mb-0.5">Starting from</p>
+                      <p className="text-2xl font-bold text-slate-900">${deal.price}</p>
+                    </div>
+                    <button className="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full group-hover:bg-slate-900 transition-colors shadow-lg shadow-blue-200 group-hover:shadow-slate-200">
+                      <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5" />
                     </button>
                   </div>
                 </div>

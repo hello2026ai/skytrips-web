@@ -655,7 +655,7 @@ export function AirportSearch({
           'md:px-4 md:py-2 px-2 py-1',
           !insideBorder && 'border border-gray-300 rounded-md transition-all',
           isFocused && !insideBorder ? 'border-gray-400 shadow-sm' : '',
-          'md:min-h-[70px]'
+          'min-h-[4.375rem]'
         )}
         onClick={(e) => {
           // Only focus if clicking directly on the container, not during scroll
@@ -741,9 +741,9 @@ export function AirportSearch({
             data-lpignore="true"
             data-form-type="other"
             className={cn(
-              'w-full outline-none bg-transparent pr-8',
-              'md:text-base text-sm',
-              'md:py-1 py-0.5',
+              'w-full outline-none bg-transparent pr-12',
+              'text-base',
+              'py-1',
               'label-l1',
               selectedAirport
                 ? 'label-l1 text-background-on cursor-pointer'
@@ -757,13 +757,13 @@ export function AirportSearch({
           {searchValue && (
             <button
               onClick={handleClear}
-              className="absolute right-1 top-1/2 transform -translate-y-1/2 text-primary hover:text-blue-700 bg-white rounded-full transition-colors md:p-1 p-0.5"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 text-primary hover:text-blue-700 bg-transparent rounded-full transition-colors flex items-center justify-center w-12 h-12"
               type="button"
               aria-label="Clear search"
             >
               <X
-                size={16}
-                className="md:w-4 md:h-4 w-3.5 h-3.5"
+                size={20}
+                className="w-5 h-5"
                 strokeWidth={2.5}
               />
             </button>
@@ -960,7 +960,7 @@ export function AirportSearch({
                                       }
                                     }}
                                     className={cn(
-                                      'flex items-center py-1 px-2 transition-colors my-1 rounded-md',
+                                      'flex items-center py-2 px-3 transition-colors my-1 rounded-md min-h-[3rem]',
                                       idx === location.airports.length - 1 &&
                                         'mb-2',
                                       !airport.iataCode &&

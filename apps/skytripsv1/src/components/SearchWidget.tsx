@@ -657,19 +657,9 @@ export function SearchWidget({
     }
   }, [tripType, watch, setValue]);
 
-  // Ensure tripType stays in sync with dateRange.to
-  useEffect(() => {
-    const dateRange = watch('dateRange');
-    if (dateRange) {
-      const shouldBeTripType = dateRange.to ? 'round_trip' : 'one_way';
-      if (tripType !== shouldBeTripType) {
-        console.log(
-          `Correcting trip type from ${tripType} to ${shouldBeTripType} based on date range`
-        );
-        setTripType(shouldBeTripType);
-      }
-    }
-  }, [watch, tripType]);
+  // Ensure tripType stays in sync with dateRange.to - REMOVED to fix Round Trip selection issue
+  // The previous useEffect here was forcing tripType back to 'one_way' if no return date was selected,
+  // preventing the user from switching to Round Trip mode.
 
   // Prepare airport data for data attribute
   const airportDataString = JSON.stringify({
@@ -869,60 +859,61 @@ export function SearchWidget({
       <form
         onSubmit={handleFormSubmission}
         data-airport-data={airportDataString}
+        className="w-full"
       >
         <div
-          className={`mx-auto bg-white rounded-2xl shadow-lg overflow-hidden ${
-            compact ? 'max-w-5xl' : 'max-w-6xl'
+          className={`mx-auto bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ${
+            compact ? 'max-w-5xl' : 'max-w-7xl'
           }`}
         >
           {/* Trip Type Selector */}
-          <div className="flex items-center gap-6 px-6 pt-5 pb-1 border-b border-gray-100">
-            <label className="flex items-center gap-2 cursor-pointer group">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 px-4 sm:px-6 pt-5 pb-3 sm:pb-1 border-b border-gray-100">
+            <label className="flex items-center gap-3 cursor-pointer group min-h-[48px]">
               <input
                 type="radio"
                 name="tripTypeSelector"
                 checked={tripType === 'one_way'}
                 onChange={() => handleTripTypeSelect('one_way')}
-                className="w-4 h-4 accent-primary cursor-pointer"
+                className="w-5 h-5 accent-primary cursor-pointer focus:ring-2 focus:ring-primary focus:ring-offset-2"
               />
-              <span className={`text-sm font-medium transition-colors ${tripType === 'one_way' ? 'text-slate-900' : 'text-slate-500 group-hover:text-slate-700'}`}>
+              <span className={`text-base sm:text-sm font-medium transition-colors ${tripType === 'one_way' ? 'text-slate-900' : 'text-slate-500 group-hover:text-slate-700'}`}>
                 One-way
               </span>
             </label>
-            <label className="flex items-center gap-2 cursor-pointer group">
+            <label className="flex items-center gap-3 cursor-pointer group min-h-[48px]">
               <input
                 type="radio"
                 name="tripTypeSelector"
                 checked={tripType === 'round_trip'}
                 onChange={() => handleTripTypeSelect('round_trip')}
-                className="w-4 h-4 accent-primary cursor-pointer"
+                className="w-5 h-5 accent-primary cursor-pointer focus:ring-2 focus:ring-primary focus:ring-offset-2"
               />
-              <span className={`text-sm font-medium transition-colors ${tripType === 'round_trip' ? 'text-slate-900' : 'text-slate-500 group-hover:text-slate-700'}`}>
+              <span className={`text-base sm:text-sm font-medium transition-colors ${tripType === 'round_trip' ? 'text-slate-900' : 'text-slate-500 group-hover:text-slate-700'}`}>
                 Round-trip
               </span>
             </label>
-            <label className="flex items-center gap-2 cursor-pointer group">
+            <label className="flex items-center gap-3 cursor-pointer group min-h-[48px]">
               <input
                 type="radio"
                 name="tripTypeSelector"
                 checked={tripType === 'multi_city'}
                 onChange={() => handleTripTypeSelect('multi_city')}
-                className="w-4 h-4 accent-primary cursor-pointer"
+                className="w-5 h-5 accent-primary cursor-pointer focus:ring-2 focus:ring-primary focus:ring-offset-2"
               />
-              <span className={`text-sm font-medium transition-colors ${tripType === 'multi_city' ? 'text-slate-900' : 'text-slate-500 group-hover:text-slate-700'}`}>
+              <span className={`text-base sm:text-sm font-medium transition-colors ${tripType === 'multi_city' ? 'text-slate-900' : 'text-slate-500 group-hover:text-slate-700'}`}>
                 Multi-city
               </span>
             </label>
           </div>
 
-          <div className="flex flex-wrap">
-            {/* From/To Section - 45% width */}
-            <div className="w-full md:w-[45%] p-4">
-              <div className="border border-gray-300 rounded-md overflow-hidden">
-                <div className="grid grid-cols-1 md:grid-cols-[1fr,60px,1fr] gap-2 md:gap-0 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 p-2 sm:p-4">
+            {/* From/To Section - Mobile: Full, LG: 5/12 columns */}
+            <div className="col-span-1 lg:col-span-5 p-2">
+              <div className="border border-gray-300 rounded-lg overflow-hidden shadow-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-[1fr,auto,1fr] gap-0 relative">
                   {/* From Airport */}
                   <div
-                    className="relative md:min-h-[70px] min-h-[50px]"
+                    className="relative min-h-[72px]"
                     ref={fromAirportRef}
                   >
                     <AirportSearch
@@ -936,18 +927,19 @@ export function SearchWidget({
                     />
                   </div>
 
-                  {/* Swap Button - hide on small screens */}
-                  <div className="hidden md:flex items-center justify-center">
+                  {/* Swap Button - Desktop/Tablet */}
+                  <div className="hidden sm:flex items-center justify-center bg-white z-10 w-[60px] relative">
+                    <div className="absolute inset-y-2 left-0 w-px bg-gray-200"></div>
+                    <div className="absolute inset-y-2 right-0 w-px bg-gray-200"></div>
                     <button
                       type="button"
-                      className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 border border-gray-300 shadow-md"
+                      className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-gray-50 border border-gray-200 shadow-sm transition-transform hover:rotate-180 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
                       onClick={handleSwapAirports}
                       aria-label="Swap airports"
-                      style={{ zIndex: 30 }}
                     >
                       <svg
-                        width="18"
-                        height="18"
+                        width="20"
+                        height="20"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -985,45 +977,45 @@ export function SearchWidget({
                   </div>
 
                   {/* Mobile divider and swap button */}
-                  <div className="md:hidden flex items-center justify-center relative py-0">
-                    <div className="absolute left-0 right-0 border-t border-gray-300"></div>
+                  <div className="sm:hidden flex items-center justify-center relative py-0 h-0 z-20">
+                    <div className="absolute left-4 right-4 border-t border-gray-200"></div>
                     <button
                       type="button"
-                      className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 border border-gray-300 shadow-md absolute z-30 top-[-16px]"
+                      className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-gray-50 border border-gray-200 shadow-sm absolute top-1/2 -translate-y-1/2 focus:outline-none focus:ring-2 focus:ring-primary"
                       onClick={handleSwapAirports}
                       aria-label="Swap airports"
                     >
                       <svg
-                        width="16"
-                        height="16"
+                        width="20"
+                        height="20"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="w-4 h-4"
+                        className="transform rotate-90"
                       >
-                        <path
-                          d="M9 7.5L6 4.5L3 7.5"
+                         <path
+                          d="M7.5 9L4.5 6L7.5 3"
                           stroke="#737373"
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
                         <path
-                          d="M6 19.5L6 4.5"
+                          d="M19.5 6H4.5"
                           stroke="#737373"
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
                         <path
-                          d="M15 16.5L18 19.5L21 16.5"
+                          d="M16.5 15L19.5 18L16.5 21"
                           stroke="#737373"
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
                         <path
-                          d="M18 4.5L18 19.5"
+                          d="M4.5 18H19.5"
                           stroke="#737373"
                           strokeWidth="1.5"
                           strokeLinecap="round"
@@ -1035,7 +1027,7 @@ export function SearchWidget({
 
                   {/* To Airport */}
                   <div
-                    className="relative md:min-h-[75px] min-h-[50px]"
+                    className="relative min-h-[72px]"
                     ref={toAirportRef}
                   >
                     <AirportSearch
@@ -1052,29 +1044,31 @@ export function SearchWidget({
               </div>
             </div>
 
-            {/* Date Range Picker - 35% */}
+            {/* Date Range Picker - Mobile: Full, LG: 4/12 columns */}
             <div
-              className="w-full md:w-[35%] py-2 px-4 md:py-4"
+              className="col-span-1 lg:col-span-4 p-2"
               ref={datePickerRef}
             >
-              <DateRangePicker
-                initialDateRange={{
-                  from: formValues.dateRange.from || null,
-                  to: formValues.dateRange.to || null,
-                }}
-                onChange={handleDateRangeChange}
-                defaultToRoundTrip={defaultToRoundTrip}
-                tripType={tripType === 'round_trip' ? 'round' : 'one-way'}
-                onTripTypeChange={(type) => {
-                   if (type === 'round') handleTripTypeSelect('round_trip');
-                   else handleTripTypeSelect('one_way');
-                }}
-              />
+              <div className="h-full">
+                <DateRangePicker
+                  initialDateRange={{
+                    from: formValues.dateRange.from || null,
+                    to: formValues.dateRange.to || null,
+                  }}
+                  onChange={handleDateRangeChange}
+                  defaultToRoundTrip={defaultToRoundTrip}
+                  tripType={tripType === 'round_trip' ? 'round' : 'one-way'}
+                  onTripTypeChange={(type) => {
+                     if (type === 'round') handleTripTypeSelect('round_trip');
+                     else handleTripTypeSelect('one_way');
+                  }}
+                />
+              </div>
             </div>
 
-            {/* Passengers Section - 20% with matching border */}
-            <div className="w-full md:w-[20%] p-4" ref={passengerSelectorRef}>
-              <div className="border border-gray-300 rounded-md overflow-hidden h-full">
+            {/* Passengers Section - Mobile: Full, LG: 3/12 columns */}
+            <div className="col-span-1 lg:col-span-3 p-2" ref={passengerSelectorRef}>
+              <div className="border border-gray-300 rounded-lg overflow-hidden shadow-sm h-full min-h-[72px]">
                 <PassengerSelector
                   initialCount={formValues.passengerCount}
                   onChange={handlePassengerChange}
@@ -1089,11 +1083,22 @@ export function SearchWidget({
           </div>
 
           {/* Check Prices Button and Recent Searches */}
-          <div className="px-3 pb-3 flex flex-col md:flex-row md:items-center md:justify-between">
-            <div className="flex justify-end order-1 md:order-2 mb-3 md:mb-0">
+          <div className="px-4 pb-4 sm:px-6 sm:pb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+             <div className="flex-1 order-2 md:order-1 overflow-hidden">
+              {showQuickSearches && (
+                <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar mask-gradient-right">
+                  <RecentSearches
+                    onSearchClick={handleRecentSearch}
+                    onClearAll={clearRecentSearches}
+                  />
+                </div>
+              )}
+            </div>
+            
+            <div className="flex justify-end order-1 md:order-2 w-full md:w-auto">
               <Button
                 type="submit"
-                className="bg-primary hover:bg-primary-variant text-primary-on px-8 py-6 rounded-full label-l1 text-primary-on flex-none"
+                className="w-full md:w-auto bg-primary hover:bg-primary-variant text-primary-on px-8 py-6 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center"
                 disabled={submitting}
               >
                 {submitting ? (
@@ -1106,19 +1111,10 @@ export function SearchWidget({
                 )}
               </Button>
             </div>
-            <div className="flex-1 order-2 md:order-1">
-              {showQuickSearches && (
-                <div className="flex gap-2 overflow-x-auto pr-4 no-scrollbar">
-                  <RecentSearches
-                    onSearchClick={handleRecentSearch}
-                    onClearAll={clearRecentSearches}
-                  />
-                </div>
-              )}
-            </div>
           </div>
         </div>
       </form>
     </>
   );
+
 }

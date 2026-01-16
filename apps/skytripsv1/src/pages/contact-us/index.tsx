@@ -6,6 +6,7 @@ import { useMutation } from '@apollo/client';
 import { CONTACT_US } from 'libs/src/shared-graphqlQueries/contactUs.js';
 import { toast } from 'sonner';
 import { NextSeo } from 'next-seo';
+import { getCompanyInfo } from '../../utils/companyService';
 import { 
   Phone, 
   Mail, 
@@ -21,7 +22,7 @@ import {
   Briefcase
 } from 'lucide-react';
 
-const CONTACTS = {
+const DEFAULT_CONTACTS = {
   Australia: {
     phone: '+61 420 678 910',
     email: 'info@skytrips.com.au',
@@ -31,6 +32,8 @@ const CONTACTS = {
 };
 
 const Contact: React.FC = () => {
+  const [contacts, setContacts] = useState(DEFAULT_CONTACTS);
+  const [isContactsLoading, setIsContactsLoading] = useState(true);
   const [form, setForm] = useState({
     fullName: '',
     email: '',
@@ -41,6 +44,34 @@ const Contact: React.FC = () => {
   const [func, { loading }] = useMutation(CONTACT_US, {
     fetchPolicy: 'network-only',
   });
+
+  useEffect(() => {
+    const fetchContactInfo = async () => {
+      setIsContactsLoading(true);
+      const { data, error } = await getCompanyInfo('Skytrips');
+      
+      if (data) {
+        setContacts(prev => ({
+          ...prev,
+          Australia: {
+            ...prev.Australia,
+            email: data.email,
+            phone: data.phone_number
+          }
+        }));
+      } else if (error) {
+        if (error.message.includes('does not exist')) {
+          console.warn(`[Supabase Setup Required] ${error.message}`);
+        } else {
+          console.error('Failed to fetch contact info:', error);
+        }
+        // We silently fail to default contacts
+      }
+      setIsContactsLoading(false);
+    };
+
+    fetchContactInfo();
+  }, []);
 
   const validate = () => {
     const errs: { [key: string]: string } = {};
@@ -105,9 +136,9 @@ const Contact: React.FC = () => {
       url: 'https://skytrips.com.au',
       contactPoint: {
         '@type': 'ContactPoint',
-        telephone: CONTACTS.Australia.phone,
+        telephone: contacts.Australia.phone,
         contactType: 'Customer Service',
-        email: CONTACTS.Australia.email,
+        email: contacts.Australia.email,
         areaServed: 'Australia',
         availableLanguage: 'English',
       },
@@ -179,9 +210,13 @@ const Contact: React.FC = () => {
               <p className="text-gray-500 text-sm mb-4">
                 Our phone lines are open 24/7 for urgent travel assistance.
               </p>
-              <a href={`tel:${CONTACTS.Australia.phone.replace(/\s/g, '')}`} className="text-blue-600 font-semibold hover:underline">
-                {CONTACTS.Australia.phone}
-              </a>
+              {isContactsLoading ? (
+                <div className="h-6 w-32 bg-gray-200 animate-pulse rounded"></div>
+              ) : (
+                <a href={`tel:${contacts.Australia.phone.replace(/\s/g, '')}`} className="text-blue-600 font-semibold hover:underline">
+                  {contacts.Australia.phone}
+                </a>
+              )}
             </div>
 
             {/* Email Us */}
@@ -193,9 +228,13 @@ const Contact: React.FC = () => {
               <p className="text-gray-500 text-sm mb-4">
                 Email our support desk for general inquiries or booking updates.
               </p>
-              <a href={`mailto:${CONTACTS.Australia.email}`} className="text-blue-600 font-semibold hover:underline">
-                {CONTACTS.Australia.email}
-              </a>
+              {isContactsLoading ? (
+                <div className="h-6 w-48 bg-gray-200 animate-pulse rounded"></div>
+              ) : (
+                <a href={`mailto:${contacts.Australia.email}`} className="text-blue-600 font-semibold hover:underline">
+                  {contacts.Australia.email}
+                </a>
+              )}
             </div>
 
             {/* WhatsApp */}
@@ -308,7 +347,7 @@ const Contact: React.FC = () => {
               <div className="bg-slate-800 rounded-2xl overflow-hidden shadow-lg h-[300px] md:h-[400px] relative group">
                 {/* Dark Map Overlay */}
                 <iframe 
-                  src={CONTACTS.Australia.mapUrl}
+                  src={contacts.Australia.mapUrl}
                   width="100%" 
                   height="100%" 
                   style={{ border: 0, filter: 'grayscale(100%) invert(90%)' }} 

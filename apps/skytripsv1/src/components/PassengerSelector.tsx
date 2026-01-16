@@ -139,7 +139,7 @@ export function PassengerSelector({
           className={cn(
             'flex flex-col w-full h-full px-2 md:px-4 py-1.5 cursor-pointer',
             !insideBorder && 'border border-gray-300 rounded-md transition-all',
-            'md:min-h-[70px] min-h-[50px]'
+            'min-h-[4.375rem]'
           )}
         >
           <label className="label-l1 text-neutral-dark">
@@ -186,7 +186,7 @@ export function PassengerSelector({
                 type="button"
                 variant="outline"
                 size="icon"
-                className="h-7 w-7 rounded-full hover:bg-blue-100 active:bg-[#5143d9] active:text-white transition-colors"
+                className="h-11 w-11 rounded-full hover:bg-blue-100 active:bg-[#5143d9] active:text-white transition-colors"
                 onClick={() => updateCount('adults', -1)}
                 disabled={initialCount.adults <= 1}
               >
@@ -200,7 +200,7 @@ export function PassengerSelector({
                 type="button"
                 variant="outline"
                 size="icon"
-                className="h-7 w-7 rounded-full hover:bg-blue-100 active:text-primary active:bg-[#5143d9] transition-colors"
+                className="h-11 w-11 rounded-full hover:bg-blue-100 active:text-primary active:bg-[#5143d9] transition-colors"
                 onClick={() => updateCount('adults', 1)}
                 disabled={
                   initialCount.adults >= 7 ||
@@ -227,7 +227,7 @@ export function PassengerSelector({
                 type="button"
                 variant="outline"
                 size="icon"
-                className="h-7 w-7 rounded-full hover:bg-blue-100 active:bg-[#5143d9] active:text-white transition-colors"
+                className="h-11 w-11 rounded-full hover:bg-blue-100 active:bg-[#5143d9] active:text-white transition-colors"
                 onClick={() => updateCount('children', -1)}
                 disabled={initialCount.children <= 0}
               >
@@ -241,7 +241,7 @@ export function PassengerSelector({
                 type="button"
                 variant="outline"
                 size="icon"
-                className="h-7 w-7 rounded-full hover:bg-blue-100 active:bg-[#5143d9] active:text-white transition-colors"
+                className="h-11 w-11 rounded-full hover:bg-blue-100 active:bg-[#5143d9] active:text-white transition-colors"
                 onClick={() => updateCount('children', 1)}
                 disabled={
                   initialCount.adults +
@@ -267,7 +267,7 @@ export function PassengerSelector({
                 type="button"
                 variant="outline"
                 size="icon"
-                className="h-7 w-7 rounded-full hover:bg-blue-100 active:bg-[#5143d9] active:text-white transition-colors"
+                className="h-11 w-11 rounded-full hover:bg-blue-100 active:bg-[#5143d9] active:text-white transition-colors"
                 onClick={() => updateCount('infants', -1)}
                 disabled={initialCount.infants <= 0}
               >
@@ -281,7 +281,7 @@ export function PassengerSelector({
                 type="button"
                 variant="outline"
                 size="icon"
-                className="h-7 w-7 rounded-full hover:bg-blue-100 active:bg-[#5143d9] active:text-white transition-colors"
+                className="h-11 w-11 rounded-full hover:bg-blue-100 active:bg-[#5143d9] active:text-white transition-colors"
                 onClick={() => updateCount('infants', 1)}
                 disabled={
                   initialCount.infants >= initialCount.adults ||
@@ -301,7 +301,7 @@ export function PassengerSelector({
           <div className="space-y-1">
             <div className="label-l1 text-background-on">Cabin Class</div>
             <Select value={cabinClass} onValueChange={handleCabinClassChange}>
-              <SelectTrigger className="w-full label-l1 text-background-on">
+              <SelectTrigger className="w-full label-l1 text-background-on min-h-[48px]">
                 <SelectValue placeholder="Select cabin class" />
               </SelectTrigger>
               <SelectContent className="label-l1 text-background-on">

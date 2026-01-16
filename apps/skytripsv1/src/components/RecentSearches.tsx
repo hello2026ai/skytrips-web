@@ -157,7 +157,7 @@ export function RecentSearches({
   return (
     <div className="pl-1 pb-1">
       <p className="h3 text-background-on mb-6">Recent Searches</p>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {searches.slice(0, 4).map((search) => (
           <button
             key={search.id}
